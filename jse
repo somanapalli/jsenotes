@@ -852,9 +852,168 @@ public class Test1 {
 }
 
 
+loops:
+``````
+
+if we want to execute the portion of code repeatedly based on the condition 
+
+ in java, how many loops we have?
+ 
+  for loop
+  while loop
+  do while loop
+  enhanced for loop(for each loop)
+  
+
+for loop is used to iterate a part of the program several times.
+if the number of iteration is fixed,it is recommended to use for loop.
+
+
+inside for loop 
+
+ we have to initialize the variable
+ we have to check the condition 
+ we have to increment/decrement the value.
+ 
+ syntax:
+ 
+  for(initialization;conditionchecking;increment/decrement)
+  {
+    //statement 
+  }
+  
+example:
+````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		for(int i=1;i<=5;i++) {
+		System.out.println("welcome to java session");
+		}
+	}
+}
 
 
 
+nested for loop:
+```````````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		//loop of i
+		for(int i=1;i<=3;i++) {
+	
+			//loop of j
+			for(int j=1;j<=3;j++)
+			{
+				
+				System.out.println(i + " " +j);
+			}
+			
+			
+		}
+	}
+}
+
+
+pattern matchig example using nested for loop:
+`````````````````````````````````````````````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		//loop of i
+		for(int i=1;i<=5;i++) {
+	
+			//loop of j
+			for(int j=1;j<=i;j++)
+			{
+				
+				System.out.print("*");
+			}
+			System.out.println();
+			
+			
+		}
+	}
+}
+
+
+while loop:
+```````````
+it is used to iterate a part of the program repeatedly until 
+the specified condition is true
+as soon as the boolean condition is false, the loop automatically stops.
+
+if the number of iteration is not fixed, it is recommended to use
+while loop.
+
+example:
+```````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int i=1;
+		while(i<=10)
+		{
+			System.out.println(i);
+			i++;
+		}
+	}
+}
+
+
+display the first 10 numbers in reverse order using while loop?
+
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int i=10;
+		while(i>=1)
+		{
+			System.out.println(i);
+			i--;
+		}
+	}
+}
+
+
+displaying the even numbers using while loop in reverse order:
+```````````````````````````````````````````````````````````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int i=10;
+		while(i>=1)
+		{
+			if(i%2==0)
+				System.out.println(i);
+			i--;
+		}
+	}
+}
 
 
 
