@@ -493,9 +493,376 @@ public class Test1 {
 }
 
 
+object:
+``````
+ ->instance of a class.
+ 
+ instance is allocating sufficient amount of memory space for
+ non static properties.
+ 
+ 
+ 
+  ->new keyword(dynamic memory allocation operator)
+  
+ syntax:
+ 
+   <classname> <objectname> = new <classname>();
+   
+ note:
+for a single class, we can create as many as we want 
+
+ note:
+ object name is always unique.
+ you can't define more than one object with same name.
+ 
+ can we define one method inside another method?
+  no
+   
+  
+ can we call one method from another method?
+  yes
+ 
+ note:
+ inner method definition is not possible where as
+ inner method invocation is possible.
+ 
+ 
+ example:
+
+
+object initialization = object declaration + object referencing
+
+  //object declaration
+  Test obj;
+  //object referencing
+  obj=new Test();
+
+variable initialization
+ int x;
+ x =20;
+ 
+  Test -> class name  us user defined
+  obj -> object name is user defined 
+  =   -> assignment operator
+  new -> dynamic memory allocation operator
+  Test() -> constructor is also user defined depends on class name
+  
+  note: constructor name must be similar to class name.
+  
+  class &
+  object
+  
+  
+  java is object oriented programming language
+  
+     if and only if it follows oops principles
+	 
+	 oops principles -> are given by omg(object maangement group)
+	  -candian organization
+	  
+	  -inheritance
+	  -polymorphism
+	  -encapsulation
+	  -abstraction
+	  
+	  
+conditional statements:
+````````````````````````
+Conditional statements define conditions that are true or false and then execute based on whether or not the condition is true
+
+java if statement is used to test the condition 
+it checks boolean condition true or false.
+
+
+  -if statement
+  -if else statement
+  -if else if ladder
+  -nested if statement
+
+
+syntax
+
+if(condition)
+{
+ //code to be executed
+}
+
+syntax:
+
+ if(condition)
+ {
+   //code to be executed
+  }
+  else
+  {
+  //code to be executed
+  }
+  
+ 
+
+example:
+`````````
+
+public class Test1 {
+	 
+	public static void main(String[] args) {
+		int number=17;
+		//check if the number is divisible by 2 or not
+		
+		if(number%2==0) {
+			System.out.println("even number");
+			
+		}
+		else
+		{
+			System.out.println("odd number");
+		}
+		
+		
+	
+		
+		
+	}
+	
+	
+}
+
+
+assigment:
+`````````
+check if the given year is leap year or not using 
+if else?
+
 
   
+ ternary operator:
+ `````````````````
+ we can also use ternary operator(?:) to perform the task of if..else statement.
+ 
+ it is a shorthand way to check the condition.
+ 
+ 
+ if the condition is true the result of ? will be retunred
+ if the condition is false the result of : will be returned.
+ 
+ 
+example:
+````````
+
+public class Test1 {
+	 
+	public static void main(String[] args) {
+		int number=18;
+		//check if the number is divisible by 2 or not
+		
+		String result =(number%2==0)?"even number":"odd number";
+		
+	  System.out.println(result);
+		
+		
+	}
+
+}
+
+if-else-if ladder statement:
+`````````````````````````````
+it executes one condition from multiple statements.
+
+syntax:
+ if(condition1)
+ {
+   //code to be executed
+ }
+ else if(condition2)
+ {
+   //code to be executed if condition2 is true
+ }
+ else if(condition3)
+ {
+   //code to be executed if condition3 is true
+ }
+ ..
+ else
+ {
+   //code to be executed if all conditions are false.
+ }
+ 
+assignment:
+````````````
+write a program of grading system based on student marks
+using if-else-if ladder statement.
+
+
+assignment:
+write a program to check positive,negative or zero?
+
+
+nested if statement:
+`````````````````````
+if{
+
+  if{
+  }
+ }
+ 
+example:
+`````````
+
+public class Test1 {
+	 
+	public static void main(String[] args) {
+		int age=15;
+		int weight=48;
+		//applying condition
+		if(age>=18)
+		{
+			if(weight>50)
+			{
+				System.out.println("you are eligible to donate blood");
+			}
+			else
+			{
+				System.out.println("you are not eligible to donate blood");
+			}
+		}
+		
+		else
+		{
+			System.out.println("age must be greater than 18");
+		}
+		
+	}
+	
+	
+}
+
+switch statement:
+``````````````````
+switch statement executes one statement from multiple conditions.
+
+switch statement works with byte,short,int ,long,String,enum and some 
+wrapper types.
+
+syntax:
+
+ switch(expression)
+ {
+ 
+ case value1:
+ //code to be executed;
+ break;//optional
+ case value2:
+ //code to be executed;
+ break;
+ ...
+ 
+ ...
+ default:
+ //code to be executed if all cases not matched
+ 
+ }
   
+
+
+assignment
+````````````
+finding month name for the given number?
+
+example:
+````````
+
+public class Test1 {
+	 
+	public static void main(String[] args) {
+		
+		int number=17;
+		String month="";
+		//switch statement
+		switch(number) {
+		
+		//case statements with in the switch blokc
+		
+		case 1: month="january";
+		break;
+		case 2: month="February";
+		break;
+		case 3: month="March";
+		break;
+		case 4: month="April";
+		break;
+		case 5: month="May";
+		break;
+		case 6: month="June";
+		break;
+		case 7: month="July";
+		break;
+		case 8: month="August";
+		break;
+		case 9: month="September";
+		break;
+		case 10: month="October";
+		break;
+		case 11: month="November";
+		break;
+		case 12: month="December";
+		break;
+		
+		default: System.out.println("invalid month");
+		
+		
+		
+		}
+		
+		System.out.println(month);
+	}
+	
+}
+
+assignment:
+````````````
+program to check vowel or consonant?
+
+
+switch case with enum type:
+```````````````````````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		Day[] DayNow = Day.values();
+		
+		for(Day Now: DayNow)
+		{
+			switch(Now)
+			{
+			case Sun:
+				System.out.println("sunday");
+				break;
+			case Mon:
+				System.out.println("monday");
+				break;	
+			}
+		}
+		
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   
