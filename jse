@@ -1015,6 +1015,163 @@ public class Test1 {
 	}
 }
 
+do while:
+`````````
+ atm machines
+ 
+ ->enter password:
+ 
+ java do while loop is called an exit control loop
+ therfore unlike while and for loop 
+ the do while loop check the condition at the end of  the loop body.
+ 
+
+ It is executed atleast once because condition is checked 
+ after loop body.
+
+syntax:
+    do{
+      //code to be executed or loop body
+     }
+     while(condition);
+
+
+example:
+````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int i=1;
+		do {
+			System.out.println(i);
+			i++;
+		} while (i>=10);
+	}
+}
+
+
+
+operators:
+```````````
+operator in java is a symbol that is used to perform 
+operations
+
+there are many types of operators in java
+ 
+-unary operators
+-arithmetic operators
+-shift operator
+-relational operator
+-bitwise operator
+-logical operator
+-ternary operator
+-assignment operator
+
+  
+ example on unary operator:
+ 
+ 
+ 
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int x=10;
+		System.out.println(x++);
+		System.out.println(++x);//12
+		System.out.println(x--);//12
+		System.out.println(--x);//10
+	}
+}
+
+example:
+`````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int a=10;
+		int b=10;
+		
+	System.out.println(a++ + ++a);//10+12->22
+	System.out.println(b++ + b++);//10+11->21
+	}
+}
+
+
+~ and !
+ 
+a=10
+~a ->
+
+example:
+````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int a=10;
+		boolean b= true;
+		System.out.println(!b);//false
+		System.out.println(~a);//-11
+	}
+}
+
+
+example on bitwise operators:
+``````````````````````````````
+
+public class Test1 {
+	
+	public enum Day{Sun,Mon,Tue,Wed,Thu,Fri,Sat};
+	 
+	public static void main(String[] args) {
+		
+		int a=12,b=10;
+		/*
+		 * 01100 
+		 * 01010 
+		 * 00110 
+		 * 16 8 4 2 1
+		 */
+		System.out.println(a&b);//8
+		System.out.println(a|b);//14
+		System.out.println(a^b);//6
+		
+		System.out.println(a<<3);
+		//formula -> 2^n * a-> 2^3 * 12 =>96
+		
+		System.out.println(a>>2);
+		//formular -> a/2^n -> 12/4 -> 3
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 java assignments for today:
 ```````````````````````````
@@ -1207,7 +1364,6 @@ how many gross, how many dozen, and how many left over eggs the user has.
 Recommended duration: 20Mins
 
 Solution Guidance (if applicable): For example, if the input is 1342 eggs, then the program should respond with 
-    Your number of eggs is 9 gross, 3 dozen, and 10
 
 
 
