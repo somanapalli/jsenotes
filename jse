@@ -1661,6 +1661,139 @@ public class Test6 {
 	}
 }
 
+
+java Arrays:
+````````````
+
+
+syntaxes:
+
+ datatype[] arr;
+ datatype []arr;
+ datatype arr[];
+ 
+instantiation of an array:
+<arrayreferencevariable> = new datatype[size];
+
+
+example:
+`````````
+
+public class Test7 {
+
+	public static void main(String[] args) {
+		
+		//declaration cum instantiation
+		int a[] = new int[3];
+		//initialization
+		a[0]=100;
+		a[1]=200;
+		a[2]=300;
+		
+		//int a[]= {100,200,300};
+		//traversing an array using for loop
+		
+		for(int i=0;i<a.length;i++)
+		{
+			System.out.println(a[i]);
+		}
+		System.out.println("=============");
+		
+		//traversing an array using for each loop
+		
+		for(int b:a)
+		{
+			System.out.println(b);
+		}
+	}
+}
+
+
+example on anonymous array:
+````````````````````````````
+
+public class Test7 {
+
+	static void printArray(int arr[])
+	{
+		for(int i=0;i<arr.length;i++)
+			System.out.println(arr[i]);
+	}
+	public static void main(String[] args) {
+		
+		printArray(new int[]{100,200,300});
+		
+	}
+}
+
+example on returning array from a method:
+``````````````````````````````````````````
+
+public class Test7 {
+
+	static int[] get()
+	{
+		return new int[]{100,200,300};
+	}
+	public static void main(String[] args) {
+		
+		int arr[]=get();
+		//print the array data
+		
+		for(int a:arr)
+		{
+			System.out.println(a);
+		}
+	}
+}
+
+
+
+multidimensional array:
+```````````````````````
+datatype referncevariable[][];
+
+int[][] arr = new int[3][3];
+
+example:
+`````````
+
+
+public class Test7 {
+
+	public static void main(String[] args) {
+		
+		int arr[][]= {{1,2,3},{4,5,6},{7,8,9}};
+		int x[]= {1,2,3};
+		for(int i=0;i<3;i++) {
+			for(int j=0;j<3;j++)
+			{
+				System.out.print(arr[i][j] + " ");
+				 
+			}
+			System.out.println();
+			
+			System.out.println(arr.getClass().getName());
+		    System.out.println(x.getClass().getName());
+		}
+	}
+}
+
+
+//assigment:
+write a program for cloning an array?
+
+write a program for addition of two matrices?
+
+
+
+
+
+
+
+
+
+
 assignments today:
 ```````````````````
 Classes and Methods
@@ -1763,6 +1896,63 @@ Solution Guidance (if applicable): NA
 
 
 
+Lab Exercise No:19
+
+Exercise Objective(s):Arrays
+
+Exercise:Write a program to declare an array with 8 elements and copy the 8 elements into another 
+array and display the same.
+
+Recommended duration:15Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:20
+
+Exercise Objective(s):Arrays
+
+Exercise:Write a program to display the sum and the average of elements in the array.
+Recommended duration:15Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:21
+
+Exercise Objective(s):Arrays
+
+Exercise:Write a program to construct two matrices and display the sum of those.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+Lab Exercise No:22
+
+Exercise Objective(s):Arrays
+
+Exercise:Write a program to display the square of the elements of a two dimensional array.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:23
+
+Exercise Objective(s):Arrays
+
+Exercise:Write a program to construct an array with 10 elements and to find the number of    
+occurrences of each element in the Array.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
 
 
 
