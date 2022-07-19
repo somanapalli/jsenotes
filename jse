@@ -1661,6 +1661,107 @@ public class Test6 {
 	}
 }
 
+assignments today:
+```````````````````
+Classes and Methods
+
+Lab Exercise No:14
+
+Exercise Objective(s):Construction of an object
+
+Exercise:Create a class called Calculator which has 4 different methods add, diff, mul and div which 
+accepts two numbers as parameters. Create an object to access these methods and invoke 
+these methods with two numbers and display the result in the corresponding methods. 
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:15
+
+Exercise Objective(s):Construction of an object, constructors
+
+Exercise:Create a class called Sample. Write a program to display the no of objects created for that 
+class or the no of times that class is instantiated.
+
+Recommended duration:15Mins
+
+Solution Guidance (if applicable): Use a static int variable and increment that variable inside the
+constructor.
+
+
+
+
+Lab Exercise No:16
+
+Exercise Objective(s):Construction of an object, this keyword, accessors(getters) and mutators(setters), 
+public and private access specifiers, instance and class member variables
+
+Exercise:Create a class called Student with the following details: RollNo, StudName, MarksInEng, 
+MarksInMaths and MarksInScience. Write getters and setters for the all variables. RollNo
+should be automatically generatedwhenever a newstudent is added.
+
+	     Create a class called Standard with 8 students’ details and write separate method for each of 
+the following tasks and invoke the same.
+1.	To display the entire roll no and the name of the students in the class in the ascending order of roll no.
+2.	To display the roll no and the name of the student who has got the highest percentage.
+3.	To display the roll no and the name of the student who scored highest mark 
+inmathematics.
+4.	To display the roll no and the name of the student in the ascending order of the total marks in mathematics and science alone.
+5.	To display the roll no, name, total marks, percentage and rank of all the students in the descending order of rank.
+
+Recommended duration:40Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:17
+
+Exercise Objective(s):String class, String immutability  
+
+Exercise:Write class that declares the following String.
+		“The quick brown fox jumps over the lazy dog”.
+Perform the following modifications to the above string using appropriate methods.
+
+1.	Print the character at the 12th index.
+2.	Check whether the String contains the word “is”.
+3.	Add the string “and killed it” to the existing string.
+4.	Check whether the String ends with the word “dogs”.
+5.	Check whether the String is equal to “The quick brown Fox jumps over the lazy Dog”.
+6.	Check whether the String is equal to “THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG”.
+7.	Find the index position of the character “a”.
+8.	Find the last index position of the character “e”.
+9.	Find the length of the String.
+10.	Check whether the String matches to “The quick brown Fox jumps over the lazy Dog”.
+11.	Replace the word “The” with the word “A”.
+12.	Split the above string into two such that two animal names do not come together.
+13.	Print the animal names alone separately from the above string.
+14.	Print the above string in completely lower case.
+15.	Print the above string in completely upper case.
+
+Recommended duration:30Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:18
+
+Exercise Objective(s):String class, String immutability  
+
+Exercise:Write a program to demonstrate the difference between equals and == operator with 
+appropriate example.
+
+Recommended duration:15Mins
+
+Solution Guidance (if applicable): NA
+
+
 
 
 
