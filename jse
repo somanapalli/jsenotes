@@ -1162,217 +1162,427 @@ public class Test1 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-java assignments for today:
-```````````````````````````
-JAVA
-
-Introduction to Java
-
-
-Lab Exercise No: 1
-
-Exercise Objective(s): Simple java program
-
-Exercise: Write a program with a class name “Welcome” and display a message as follows: “Welcome 
-to the world of Java”
-
-Recommended duration: 10Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-
-Lab Exercise No: 2
-
-Exercise Objective(s): Compilation and execution from command line, Concept of object and class
-
-Exercise: Write a program that takes a console input (Input given by the user while executing the 
-program in command line) and prints the same.
-
-Recommended duration: 10Mins
-
-Solution Guidance (if applicable): The input can be printed as follows. 
-System.out.println ("Message: "+args [0]);
-
-
-
-
-Lab Exercise No: 3
-
-Exercise Objective(s): Comments in java programs and java documentation
-
-Exercise: Write a program with all the type of comments and execute it. User nested comments also.
-
-Recommended duration: 10Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-
-
-JAVA
-
-Basic elements of Java
-
-Lab Exercise No: 4
-
-Exercise Objective(s): Primitive data types and their range, Variables, Constants and literals,     
-Conventions
-
-Exercise: Write a program which declares variables of int, float, double data types and a constant of  
-long data type and displays all with an appropriate message. Follow the naming conventions 
-for all the variables and literals.
-
-Recommended duration: 10Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-Lab Exercise No: 5
-
-Exercise Objective(s): Simple operators
-
-Exercise: Write a program to get two numbers as input through command line and swap the values of 
-two numbers without using a temporary variable and display the same.
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): a = a + b
-b = a – b
-b = a - b
-
-
-
-Lab Exercise No: 6
-
-Exercise Objective(s): Conditional statements
-
-Exercise: Write a program to determine whether the given year is leap year or not(Get the input 
-through command line). 
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-Lab Exercise No: 7
-
-Exercise Objective(s): Conditional statements
-
-Exercise: Write a program to determine the largest of three numbers. 
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-
-Lab Exercise No: 8
-
-Exercise Objective(s): Loops
-
-Exercise: Write a program to determine whether a number is a palindrome or not. 
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-
-Lab Exercise No: 9
-
-Exercise Objective(s): Loops
-
-Exercise: Write a program to display the Fibonacci series starting from 0 till 200.
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-Lab Exercise No: 10
-
-Exercise Objective(s): Constants and literals, Loops
-{“sandeep”,”mahipal”}
-{“peednas”}
-Exercise: Write a program to declare a set of 5 words and reverse each word and arrange the resulting 
-words in alphabetical order and display the same.
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-Lab Exercise No: 11
-
-Exercise Objective(s): Constants and literals, Loops
-
-Exercise: Write a program to arrange an array of elements in ascending order using selection sort  
-algorithm.
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-
-
-
-Lab Exercise No: 12
-
-Exercise Objective(s): Conditional statements, Loops
-
-Exercise: A shopkeeper sells three products whose retail prices are as follows: 
-Product 1 - 22.50
-              Product 2 - 44.50 
-              Product 3 - 9.98
-Write an application that reads a series of pairs of numbers as follows:
- a) Product number 
- b) Quantity sold
-
-                The application should use a switch statement to determine the retail price for each product. It 
-should calculate and display the total retail value of all products sold. 
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): NA
-
-
-Lab Exercise No: 13
-
-Exercise Objective(s): Simple operators, Conditional statements, Loops
-
-Exercise: Consider user has N eggs. Then display the no of eggs in gross (144 eggs make one gross) and 
-no of eggs in dozen (12 eggs make one dozen) and the no of eggs that is left out remaining. 
-The total no of eggs can be got as input through command line. The program should display
-how many gross, how many dozen, and how many left over eggs the user has.
-
-Recommended duration: 20Mins
-
-Solution Guidance (if applicable): For example, if the input is 1342 eggs, then the program should respond with 
-
-
-
-
-
-
-
-
-
+constructor:
+````````````
+constructor is a special member method 
+which is used to initialize the datamembers of the class.
+
+->constructor name and class name must be similar
+->constructor should not return anything even void also.
+->constructor should not be inherited
+->constructor should not be static.
+
+
+
+types of constructor:
+
+  1.default constructor
+     -system defined default constructor
+	 -user defined default constructor(no-arg constructor)
+	 
+	-it is a constructor which doesn't takes parameters
+	
+  2.parameterized constructor
+  
+    -it is  a constructor which takes parameters 
+	
+	
+//example:
+
+
+public class Test2 {
+	int a;
+	String b;
+	boolean c;
+	float f;
+	
+	public Test2()
+	{
+		a=100;
+		b="rama";
+		c=true;
+		f=6.7f;
+	}
+	public static void main(String[] args) {
+		
+		
+		Test2 obj = new Test2();
+		
+		System.out.println(obj.a + " " +obj.b + " " +obj.c + " " +obj.f);
+		
+		
+	}
+
+}
+
+
+ example on parameterized constructor:
+ ``````````````````````````````````````
+ 
+public class Test2 {
+	//class level variables
+	int a;
+	String b;
+	
+	//parameterized constructor
+	public Test2(int a, String b)
+	{
+		this.a=a;
+		this.b=b;
+	}
+	
+	public void display()
+	{
+		System.out.println(this.a);
+		System.out.println(this.b);
+	}
+	public static void main(String[] args) {
+		
+		Test2 obj = new Test2(100,"rama");
+		obj.display();
+		
+		
+	}
+
+}
+
+
+
+note:
+
+if we define a class without having any constructors, by default java 
+compiler will generate system defined default constructor and the purpose of
+this constructor is to assign the default values based on the variables 
+which we declared inside the class.
+
+if we create the object using default constructor first jvm will check 
+for system defined default construtor and assigns default values and then 
+it will check for any user defined default constructor.
+
+if any it found, accordingly user defined initialized values will be 
+replaced with default values.
+
+note:
+````
+if we define any class with parameterized constructor you can't create the
+object using default constructor since java compiler will not generate 
+any system defined default constructor.
+
+in case of parameterized constructor, directly when we create the object
+using parameterized constructor values will be initialized at that moment only.
+
+
+this:
+`````
+this is a java reserved keyword which is used to always pointing to 
+current class object.
+
+
+->to differentiate class level variables and constructor level parameters if 
+  both are same.
+  
+ 
+->to invoke current class constructor(s)
+
+
+example:
+````````
+
+public class Test2 {
+	
+	
+	//parameterized constructor
+	public Test2(int a, String b)
+	{
+		
+		System.out.println("iam parameterized constructor");
+	}
+	
+	public Test2()
+	{
+		this(100,"Rama");
+		System.out.println("iam default constructor");
+		
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		Test2 obj1 = new Test2();
+		
+		
+		
+	}
+
+}
+
+note:
+`````
+when we have multiple constructors to invoke all these constructors
+it is not recommended to create those many objects.
+
+just by creating only one object using any constructor we are able to 
+invoke all the constructors using this()
+
+ this() -> used for calling current class default constructor
+ 
+ this(..) ->used for calling current class parameterized constructor
+ 
+ 
+ 
+command line arguments:
+```````````````````````
+the arguments which we are passing while we are executing the java program 
+are known as command line arguments.
+
+why main() method is taking array of String as an argument?
+```````````````````````````````````````````````````````````
+to deal with command line arguments.
+
+
+example:
+`````````
+public class Test3 {
+
+	public static void main(String[] args) {
+		
+		System.out.println(Integer.parseInt(args[0])+Integer.parseInt(args[1]));
+	}
+}
+
+
+note:
+`````
+for every data type, we have wrapper classes are there inside those wrapper 
+classes we have corresponding parser methods are there for the purpose of 
+converting String type data to corresponding data.
+
+
+Scanner class :
+```````````````
+it is used to read the input from the keyboard inside Scanner class we have 
+many methods which starts with next() to read different types of input data 
+like nextInt() , nextBoolean(),nextFloat() etc...
+
+example:
+`````````
+import java.util.Scanner;
+
+public class Test3 {
+
+	public static void main(String[] args) {
+		
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("enter first number");
+		
+		int fno = s.nextInt();
+
+		System.out.println("enter second number");
+		
+		int sno = s.nextInt();
+		
+		int result = fno+sno;
+		System.out.println("sum of two numbers is : " + result);
+		
+	}
+}
+
+
+type casting in java:
+`````````````````````
+in java, type casting is a method or process that converts a datatype
+into another data type in both ways manually and automatically.
+
+
+The automatic conversion is done by the compiler and manual conversion 
+performed by the programmer.
+
+
+double -> float -> long -> int ->short ->byte
+
+converting a value from one datat type to another data type is known 
+as type casting.
+
+
+there are two types of type casting:
+
+ -widening type casting
+ -narrowing type casting
+ 
+ converting a lower data type into a higher one is called 
+ widening type casting.
+ 
+ it is also known as implicit conversion or casting down.
+ 
+ it is done automatically.
+ 
+ It is safe because there is no chance to lose the data.
+ 
+ it takes place  when
+  
+  -both data types must be compatible with each other.
+  -the target type must be larger than the source type.
+  
+
+
+example:
+`````````
+
+public class Test4 {
+
+	
+	public static void main(String[] args) {
+		
+		int x = 5;
+		
+		long y = x;
+		
+		float z = y;
+		
+		System.out.println("before conversion , int value:" +x);
+		System.out.println("after conversion, long value:" +y);
+		System.out.println("after conversion,float value: " +z);
+		
+		
+	}
+}
+
+
+narrowing type casting:
+```````````````````````
+converting a higher data type into a lower one is called
+narrowing type casting.
+
+it is known as explicit conversion or casting up.
+
+it is done manually by the programmer.
+
+double -> float -> long -> int ->short ->byte
+
+
+example:
+`````````
+
+public class Test4 {
+
+	
+	public static void main(String[] args) {
+		
+		double d = 323.66;
+		
+		//converting double data type into long data type
+		
+		 long l = (long)d;
+		
+		 //converting long data type into int data type
+		 
+		 int i =(int)l;
+		 
+		System.out.println("before conversion :" +d);
+		System.out.println("after conversion, long value:" +l);
+		System.out.println("after conversion,int value: " +i);
+		
+		
+	}
+}
+
+String class api in java:
+``````````````````````````
+String is a predefined class available in java.lang package.
+
+purpose: to store the series of characters.
+
+
+in how many ways we can create the String object 
+
+ -> two ways
+ 
+ 1.using String literal
+ 2.using new keyword
+ 
+ String s1 = "Rama";(it gets stored inside scp memory area which is the part of 
+ heap memory area which is the part of jvm which is the part of ram)
+ 
+ 
+ String s2 = new String("Rama");
+ (it gets stored inside heap memory area )
+ 
+ 
+ note:
+ `````
+  scp memory area will not allow duplicates
+  
+  where as heap memory always creates new object irrespective
+  of whether it is same or different.
+  
+  
+ 
+String s1 = new String("rama");
+String s2 = new String("rama");
+
+ 
+
+String class object is immutable in nature.
+
+
+unmodifiable 
+
+
+->once we create any String object, on top of existing String object 
+we could not perform any manipulations/modifications 
+
+how to compare the String:
+``````````````````````````
+ ->by using == operator(Reference comparision operator)
+ ->by using equals() or equalsIgnoreCase()
+ ->by using compareTo() or compareTOIgnoreCase()
+     -compareTo() compares Strings based on lexigraphical comparision.
+	 -based on unicode values.
+	 
+	 
+example:
+````````
+//program on string comparisions -different ways 
+
+public class Test5 {
+	
+	public static void main(String[] args) {
+		
+		//string literal approach -it won't allow duplicates
+		String s1 = "rama";
+		String s2 = "rama";
+		String s5 = "Rama";
+
+		//to find out unicode value of character based on the index
+		System.out.println(s1.codePointAt(0));
+		System.out.println(s5.codePointAt(0));
+		
+		
+		System.out.println(s1==s2);//true
+		System.out.println(s1.equals(s2));//true
+		System.out.println(s1.equals(s5));//false
+		System.out.println(s1.equalsIgnoreCase(s5));//true
+		System.out.println(s1.compareTo(s2));//0
+		System.out.println(s1.compareTo(s5));//32
+		System.out.println(s5.compareTo(s1));//-32
+		System.out.println(s1.compareToIgnoreCase(s5));//0
+		
+		//using new keyword -it creates everytime as a new object
+		String s3 = new String("hyd");
+		String s4 = new String("hyd");
+		
+		System.out.println(s3==s4);//false
+		System.out.println(s3.equals(s4));//true
+		
+	}
+
+}
+
+ 
+ 
 
   
   
