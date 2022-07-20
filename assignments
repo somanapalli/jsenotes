@@ -350,3 +350,106 @@ Recommended duration:20Mins
 
 Solution Guidance (if applicable): NA
 
+
+
+
+Lab Exercise No:24
+
+Exercise Objective(s):Overloading
+
+Exercise:Create a class called shape with the following methods
+1.	area
+2.	perimeter
+
+                    Overload the area and perimeter method to calculate for both square and rectangle.
+                    Create a main class and invoke the area method to calculate the area of the square and 
+rectangle. Also invoke the perimeter method to calculate the perimeter of the square 
+and rectangle.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:25
+
+Exercise Objective(s):Overloading
+
+Exercise: Create a class called employee with the following data members
+1.	empName
+2.	empId
+3.	empAge
+4.	empdesgn
+5.	empLocation
+6.	empExpInYrs
+
+All these data members should be initialized using constructors. Use constructor overloading 
+and demonstrate by creating different employee objects with
+
+1.	Employee  name alone
+2.	Employee name and id
+3.	Employee name, id and age
+4.	Employee name, id and designation
+5.	Employee name, id, age and designation
+6.	Employee name, id, age and location
+7.	Employee name, id, age and experience
+8.	 Employee name, id, designation and experience
+9.	Employee name, id, designation, location and experience
+10.	Employee name, id, age, designation,  location and experience
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+
+Lab Exercise No:26
+
+Exercise Objective(s):Overloading
+
+Exercise:Create a class called Calculator which has 4 different methods add, diff, mul and div which 
+accepts two numbers as parameters. Overload the methods such that the parameters can be 
+of the following pattern.
+1.	Both are of int data type.
+2.	Both are of double data type.
+3.	First parameter is of int data type and second parameter is of double data type.
+4.	First parameter is of double data type and second parameter is of int data type.
+                  Create anobject to access these methods and invoke these methods with different type of
+numbers and display the result in the corresponding methods. 
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): Re-use the code from Lab Exercise 14
+Lab Exercise No:27
+
+Exercise Objective(s):Initializers
+
+Exercise:Write a class called Computer such that the object of that class should be created only when 
+the class is loaded.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:28
+
+Exercise Objective(s):Var-args
+
+Exercise:In the calculator (Lab exercise - 14) program, make the add and diff method to accept var-args
+and demonstrate.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable):NA
+
+
+
+
+
+
+
