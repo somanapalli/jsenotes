@@ -448,6 +448,202 @@ Recommended duration:20Mins
 Solution Guidance (if applicable):NA
 
 
+Lab Exercise No:29
+
+Exercise Objective(s):Package
+
+Exercise:Create a package called shapes. Create some classes in the package representing some
+common geometric shapes like Square, Triangle, Circle and so on. Create a class called 
+TestShapes and create objects for all the shapes and print corresponding messages.
+                   Execute the TestShapes class.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:30
+
+Exercise Objective(s):Jar
+
+Exercise:
+1.	Create a new project in which create a package named org.animals. In that create various classes like Lion, Tiger, Deer, Monkey, Elephant and Giraffe. In each class create data members like color, weight,age etc. Create methods like isVegetarian, canClimb, sound etc
+2.	Create another project and in that create a package called zoo and create a class called VandalurZooand create objects for the animals that are existing in zoo and print the characteristic of each animal.
+
+Recommended duration:15Mins
+
+Solution Guidance (if applicable):Export the jar and add it as an External Archive.
+
+
+
+
+
+
+
+
+
+
+Lab Exercise No:31
+
+Exercise Objective(s):System class
+
+Exercise:Create a class which displays the following about the JVM.
+1.	Version of Java
+2.	Vendor for Java
+3.	Class Path
+4.	Installed home directory
+5.	OS name on which it is installed with version
+
+Recommended duration:10Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:32
+
+Exercise Objective(s):Scanner class
+
+Exercise:Create a class called Student. Get the details like name, degree, age, total marks and 
+percentage from the user and display the same.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:33
+
+Exercise Objective(s):Systemclass,usingstaticimport
+
+Exercise:Create a Package called house. Create 2 classes namely Hall and Kitchen.
+
+1.	 In the Hall class print the message “This is the first room while entering the house” without using the class name System explicitly in the println statement.
+2.	In the Kitchen class create an array called appliances and initialize with values and print the same. 
+3.	After printing copy that array into a different array.
+4.	Invoke garbage collector explicitly for the Kitchen class.
+
+Recommended duration:20Mins
+
+Solution Guidance (if applicable): NA
+
+JAVA
+
+Inheritance
+
+Lab Exercise No:34
+
+Exercise Objective(s):The concept of inheritance
+
+Exercise:Create a class called Vehicle. Create subclasses like Truck, Bus, Car etc. Add common methods 
+in the base class and specific methods in the corresponding class. Create a class called Road 
+and create objects for the Truck, Car, Bus etc and display the appropriate message. 
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:35
+
+Exercise Objective(s):super keyword
+
+Exercise:In the Lab Exercise 34, in the Vehicle class constructor initialize few variables like color, no of 
+wheels, model etc. Give appropriate values for these variables from the invoking subclass.  
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:36
+
+Exercise Objective(s):protected access specifier
+
+Exercise:In the Lab Exercise 35, create another class called City which creates an object for the Car, 
+Truck and Bus class and displays the details through a display () method in the Vehicle class. 
+The other methods and data members should not be accessible by the City class.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+Lab Exercise No:37
+
+Exercise Objective(s):Overriding
+
+Exercise: In the Lab Exercise 30, create a super class called Animal and make all the existing classes as 
+the sub class for Animal class. Move the method isVegetarian and canClimb to the super class 
+and implement generically. Whenever necessary change the implementation of these methods   
+in the respective subclasses.Display the characteristic of each animal.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:38
+
+Exercise Objective(s):final Keyword
+
+Exercise:In the Lab Exercise 37, make the Lion, Tiger, Deer, Monkey, Elephant and Giraffe classes such 
+that these classes cannot be inherited.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:39
+
+Exercise Objective(s):Polymorphism
+
+Exercise:Create a class called Worker. Write classes DailyWorker and SalariedWorker that inherit from
+Worker.Every worker has a name and a salaryrate. Write method Pay (int hours) to compute 
+the week pay of every worker.  A Daily worker is paid on the basis of the number of days 
+she/he works.The salaried worker gets paid the wage for 40 hours a week no matter what the
+actual hours are.  Test this program to calculate the pay of workers. 
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:40
+
+Exercise Objective(s):Polymorphism
+
+Exercise:ModifyLab Exercise 38 by creating intermediate Super classes called WildAnimals and 
+DomesticAnimals and create corresponding subclasses for the same. Create generic 
+methods in the super class and display the details of wild animals, domestic animals in 
+general separately and also display the details of each animal separately.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
 
 
 
