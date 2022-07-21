@@ -2270,7 +2270,328 @@ the classe(s).
 final methods/properties are not eligile for method overriding, since 
 final properties are constants ,  modifications are not possible.
 
+
+abstraction:
+````````````
+  -security
+  -enhancements
+  -manitability
+  -modularity
+  
+  
+  hiding the implementation details and showing only services to the end users.
+  
+abstraction is also one of the oop principle.
+
+   -abstract classe(s)(partial abstraction)
+   -interface
+   
+
+abstract class:
+````````````````
+ ->concrete classes (fully defined classes)
+ ->abstract class 
  
+ abstract class is a combination of both 
+ defined methods 
+ and as well as undefined methods
+ 
+ undefined method/abstract method:
+   
+     public abstract void getRateOfInterest();->method declaration
+	 
+	 
+	 
+note:
+
+  if a class contains atleast one abstract method it is highly 
+recommended to make corresponding class also as 
+abstract class using abstract keyword before the class declaration.
+
+
+
+    abstract class Test{
+    public abstract void m1();
+	public void m2(){}
+	
+	public Test()
+	{
+	}
+	}
+
+  
+ for a single abstract class, how many implementation classe(s) we can define?
+ 
+ as many as you want.
+
+ 
+  class Test1 extends Test
+  {
+    public void m1(){}
+	
+	public Test1()
+	{
+	  super();
+	}
+  }
+
+
+  Test obj = new Test1();
+  
+  obj.m1();
+ 
+
+in abstract class, can we define constructor(s)?
+yes
+
+Bank.java:
+```````````
+
+
+abstract public class Bank {
+
+	 abstract int getRateOfInterest();
+}
+
+SBI.java:
+``````````
+
+public class SBI extends Bank {
+
+	@Override
+	int getRateOfInterest() {
+		// TODO Auto-generated method stub
+		return 5;
+	}
+
+}
+
+CityBank.java:
+```````````````
+
+public class CityBank extends Bank {
+
+	@Override
+	int getRateOfInterest() {
+		// TODO Auto-generated method stub
+		return 7;
+	}
+
+}
+
+
+
+TestBank.java:
+``````````````
+
+public class TestBank {
+public static void main(String[] args) {
+	
+	Bank b ;
+	b=new SBI();
+	System.out.println("sbi bank rate of interest is : " + b.getRateOfInterest());
+	
+	b =new CityBank();
+	System.out.println("city bank rate of interest is : " + b.getRateOfInterest());
+}
+}
+
+
+example on abstract class with constructor:
+````````````````````````````````````````````
+
+abstract public class Bike {
+	
+	Bike()
+	{
+		System.out.println("bike is created");
+	}
+
+	void changeGear()
+	{
+		System.out.println("gear changed");
+	}
+	
+	abstract void run();
+}
+
+
+Honda.java:
+````````````
+
+public class Honda extends Bike {
+
+	@Override
+	void run() {
+		
+		System.out.println("running safely...");
+
+	}
+
+}
+
+TestAbstraction.java:
+`````````````````````
+public class TestAbstraction {
+public static void main(String[] args) {
+	
+	
+	Bike obj = new Honda();
+	obj.run();
+	obj.changeGear();
+}
+}
+
+
+interface:
+``````````
+
+interface
+implemetnatin class
+execution logic class
+
+
+
+interface i1
+{
+  public abstract void m1();
+  public static final int x=100;
+}
+
+note:
+by default interface methods are public abstract 
+and by default interface datamembers are public static final.
+
+
+ extends: 
+ 
+ using extends keyword we can take the properties from 
+ class to class and interface to interface (homogenious)
+ 
+ implements:
+ 
+ using implements keyword we can take the properties from 
+ interface to class(heterogenious)
+ 
+ assignment:
+ do one program on top of interface
+ 
+interface inheritance and multiple inheritance:
+```````````````````````````````````````````````
+
+public interface i1 {
+	
+	void m1();
+
+}
+
+
+i2.java:
+`````````
+
+public interface i2 extends i1 {
+void m2();
+}
+
+
+Test9.java:
+```````````
+
+public class Test9 implements i2 {
+
+	@Override
+	public void m2() {
+		System.out.println("m2 body");
+
+	}
+
+	@Override
+	public void m1() {
+		System.out.println("m1 body");
+
+	}
+	
+	public static void main(String[] args) {
+     	i2 obj;
+		obj = new Test9();
+		obj.m1();
+		obj.m2();
+	
+	}
+
+}
+
+
+
+
+
+
+encapsulation:
+``````````````
+
+encapsulation = datahiding + abstraction
+
+encapsulated class:
+
+ class is the best example for an encapsulation.
+ 
+ by declaring datamembers as private 
+ and by defnining public setters and getter methods(s).
+ 
+ 
+Student.java:
+``````````````
+
+public class Student {
+
+	//data hiding
+	private int stid;
+	private String stname;
+	
+	//abstraction 
+	public int getStid() {
+		return stid;
+	}
+	public void setStid(int stid) {
+		this.stid = stid;
+	}
+	public String getStname() {
+		return stname;
+	}
+	public void setStname(String stname) {
+		this.stname = stname;
+	}
+	
+	
+	public String toString()
+	{
+		return stid + " " +stname;
+	}
+	
+	
+	
+}
+Test10.java:
+````````````
+
+public class Test10 {
+	
+	public static void main(String[] args) {
+		Student student = new Student();
+		
+		student.setStid(100);
+		student.setStname("Rama");
+		
+		System.out.println("student id: " + student.getStid());
+		System.out.println("student name: " + student.getStname());
+		
+	}
+
+}
+
+
+
+
 
 
 
