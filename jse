@@ -2590,11 +2590,313 @@ public class Test10 {
 }
 
 
+packages:
+``````````
+package is a 
+   collection of 
+    
+	   classes,interfaces & sub packages
+	   
+	   classes
+	   interfaces
+	   annotations
+	   exceptions
+	   errors
+	   enums
+	   
+	   
+
+types of packages:
+  1.pre-defined packages->sunmicrosystems
+  
+   ->to perform common operations
+   
+   jse,jee,jme-
+   
+   note: all jse packages starts with java.
+ 
+list of predefined jse packages:
+`````````````````````````````````
+java.applet
+java.awt
+java.awt.color
+java.awt.datatransfer
+java.awt.dnd
+java.awt.event
+java.awt.font
+java.awt.geom
+java.awt.im
+java.awt.im.spi
+java.awt.image
+java.awt.image.renderable
+java.awt.print
+java.beans
+java.beans.beancontext
+java.io
+java.lang
+java.lang.annotation
+java.lang.instrument
+java.lang.invoke
+java.lang.management
+java.lang.ref
+java.lang.reflect
+java.math
+java.net
+java.nio
+java.nio.channels
+java.nio.channels.spi
+java.nio.charset
+java.nio.charset.spi
+java.nio.file
+java.nio.file.attribute
+java.nio.file.spi
+java.rmi
+java.rmi.activation
+java.rmi.dgc
+java.rmi.registry
+java.rmi.server
+java.security
+java.security.acl
+java.security.cert
+java.security.interfaces
+java.security.spec
+java.sql
+java.text
+java.text.spi
+java.util
+java.util.concurrent
+java.util.concurrent.atomic
+java.util.concurrent.locks
+java.util.jar
+java.util.logging
+java.util.prefs
+java.util.regex
+java.util.spi
+java.util.zip
+ 
+   
+  2.user-defined packages
+  
+  
+advantage:
+```````````
+->reusability
+->avoid naming conflicts
+
+System.out.println();
+
+PrintStream class 
+
+  println()
+  print()
+
+out object is available as a static data member inside
+System class. 
+
+System.out.print();
+
+
+note:
+by default java.lang package will be imported to 
+each and every java program.
+
+
+except java.lang package releated api,if we really need any other packages 
+api's , for sure we have to import those packages into our program. 
+otherwise we will get compiletime error.
+
+syntax:
+
+          import <packagename>.<classname>/<interfacename>;
+		  import <packagename>.*;
+		  
+		  
+
+user-defined packages:
+````````````````````````
+  we can define our own package just to keep our own clases or our 
+  own interfaces..
+  
+  syntax:
+  
+      package <packagename>;
+	  
+      class {}
+	  
+	  interface {}
+	  
+note:
+package statement always must be the first executable statement.
+
+note:
+if we didn't keep our classes/interfaces inside a package, by default jvm 
+will keep those inside default package
+
+default package name given by sunmicrosystem -> noname
+
+
+note:
+
+if two classes are belongs to same package, from one class if we want to 
+access other class methods 'import' is not required.
+
+Test1.java:
+```````````
+package p1;
+//business logic class
+public class Test1 {
+	
+	public void sum(int x, int y)
+	{
+		System.out.println(x+y);
+	}
+
+}
+
+
+Test2.java:
+```````````
+package p1;
+//execution logic class
+public class Test2 {
+	
+	public static void main(String[] args) {
+		
+		Test1 obj = new Test1();
+		obj.sum(3, 3);
+		
+	}
+
+}
+
+naming convention to create package(s):
+``````````````````````````````````````
+   <reversedomainofcompanyurl>.<projectname>.<modulename>;
+   
+   com.wipro.banking.fundtransfer;
+   
+   com.wipro
+     com.wipro.banking
+	 com.wipro.fundtransfer
+   
+Test1.java:
+`````````````
+package p1;
+//business logic class
+public class Test1 {
+	
+	public void sum(int x, int y)
+	{
+		System.out.println(x+y);
+	}
+
+}
+
+
+Test3.java:
+```````````
+package p2;
+import p1.Test1;
+public class Test3 {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		Test1 obj = new Test1();
+		obj.sum(3, 4);
+		
+	}
+
+}
+
+
+note:
+`````
+by importing main package,we won't get sub packages properties
+if we want subpackages properties we need to import subpackage too explicitly.
+
+
+package p1;
+//business logic class
+public class Test1 {
+	
+	public void sum(int x, int y)
+	{
+		System.out.println(x+y);
+	}
+
+}
+
+
+Test2.java:
+```````````
+package p1.p2;
+
+public class Test2 {
+	public void sub(int x, int y)
+	{
+		System.out.println("substraction is: " + (x-y));
+	}
+
+}
+
+
+Test3.java:
+````````````
+package p3;
+import p1.Test1;
+import p1.p2.Test2;
+//execution logic class
+public class Test3 {
+
+	public static void main(String[] args) {
+		
+		Test1 obj1  = new Test1();
+		Test2 obj2 = new Test2();
+		
+		obj1.sum(3, 4);
+		obj2.sub(4,3);
+		
+	}
+	
+}
 
 
 
+accesmodifiers:
+````````````````
+
+it is used to control the scope of the visibility over the package(s).
 
 
+  private 
+  default(not a keyword)
+  protected
+  public
+  
+  
+ private properties we can access only with in class 
+ not able to access 
+  same package subclass/non-subclass
+  other package subclass/non-subclass
+
+ default properties we can access 
+  with in the class
+  same pacakge subclass/subclass but not from 
+  other package subclass/non-subclass
+
+ protected properties we can access 
+  with in the class 
+  same pacakge subclass/non-subclass
+  other package sub class but not from 
+  other package non-subclass
+ 
+when it comes to public from any where we can access there is no 
+restriction.
+
+ 
+  
 
 
 
