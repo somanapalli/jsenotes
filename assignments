@@ -832,6 +832,140 @@ Recommended duration: 20 Mins
 Solution Guidance (if applicable): Interest calculation for a month
 
 
+----------------------------------
+JAVA
+
+Exception Handling
+
+
+Lab Exercise No:50
+
+Exercise Objective(s):syntax
+
+Exercise:In the Lab Exercise 14, change the code such that the numbers are taken as input from the 
+user. Handle the appropriate exceptions.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):InputMismatchException, Arithmetic Exception
+
+
+
+
+
+
+Lab Exercise No:51
+
+Exercise Objective(s):syntax
+
+Exercise:In the Lab Exercise 17, handle the scenarios if the String variable is not initialized.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): Null Pointer Exception
+
+
+
+
+
+
+Lab Exercise No:52
+
+Exercise Objective(s):syntax
+
+Exercise:Using Lab Exercise 17, catch and demonstratethe required exceptions.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):StringIndexOutOfBoundsException
+
+Lab Exercise No:53
+
+Exercise Objective(s):syntax
+
+Exercise:Using Lab Exercise 22, catch and demonstrate the required exceptions.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):ArrayIndexOutOfBoundsException
+
+
+
+
+
+Lab Exercise No:54
+
+Exercise Objective(s):Exception class methods
+
+Exercise:By using multiple catch blocks, write a class to demonstrate the order of the execution of the 
+catch blocks usingNegativeArraySizeException,ArrayIndexOutOfBoundsException, 
+StringIndexOutOfBoundsException, IndexOutOfBoundsException, NullPointerException,          
+ArithmeticException and print the stack trace for each exception.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):NA
+
+
+
+
+
+Lab Exercise No:55
+
+Exercise Objective(s):User-defined exceptions
+
+Exercise:In the Lab Exercise 46, handle the expected exceptions by writing custom defined exceptions.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+
+
+
+Lab Exercise No:56
+
+Exercise Objective(s):finally keyword
+
+Exercise:Create a class such that it resets the value of the objects it used to null after its usage in all 
+cases.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): Use finally block
+
+
+
+
+Lab Exercise No:57
+
+Exercise Objective(s):finally keyword
+
+Exercise:Create a class such that a method uses the try catch block with the return type of String.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): Use finally block
+
+
+
+Lab Exercise No:58
+
+Exercise Objective(s):User-defined exceptions
+
+Exercise:Createa class called Employee which asks the user to input the name and the age of a 
+employee. Raise a custom defined exception when the user enters an employee name 
+that has been already entered and raise another exception if the age is negative or less
+than 18 or greater than 60. 
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):NA
+
 
 
 
