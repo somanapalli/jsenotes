@@ -1,0 +1,128 @@
+JAVA
+IO
+
+Lab Exercise No:86
+
+Exercise Objective(s):java.io.File
+
+Exercise: Write a program that creates a new file called batch mates and store your entire batch mates name in it and display the details.
+
+Recommended duration:20 Mins
+
+Solution Guidance (if applicable):NA
+
+
+
+
+
+Lab Exercise No:87
+
+Exercise Objective(s):java.io.File
+
+Exercise:Write aprogram that counts the number of times a particular character(character should be got as a input from the user), appears in a file. Use the file that is created in Lab Exercise 86.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:88
+
+Exercise Objective(s):java.io.File
+
+Exercise:Write a program that creates a new file called my batch in a directory named Batch and copy the contents of the batch mates file in it.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:89
+
+Exercise Objective(s):java.io.File
+
+Exercise:Create a program to list files or subdirectories in a directory.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+
+Lab Exercise No:90
+
+Exercise Objective(s):Character streams classes
+
+Exercise:Create a program that accepts the 5 student roll no, name and grade through Console class. Create a properties file called class.properties and store the data by giving appropriate comments.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  For Eg, the properties file should look like,
+
+#Student 1
+Student1:31,Charles,A
+
+
+
+Lab Exercise No:91
+
+Exercise Objective(s):Character streams classes
+
+Exercise:Create a CSV file with 5 movie names along with hero and heroine names. Write a program to read from the CSV file and display it to the user.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:92
+
+Exercise Objective(s):java.io.File
+
+Exercise:Write a program that accepts the name of your batch mate as an input and displays the line number of that name in the file created in Lab Exercise 86. If any other name is been inputted display appropriate message.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+Lab Exercise No:93
+
+Exercise Objective(s):java.io.File
+
+Exercise:Write a program that displays the total number of lines, number of words and number of characters in the file created in Lab Exercise 86.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+Lab Exercise No:94
+
+Exercise Objective(s):Serialization
+
+Exercise:Write a program to create a class called Car with Model, Year of making details. Store and retrieve this information using Binary Serialization.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+Lab Exercise No:95
+
+Exercise Objective(s):Serialization
+
+Exercise:Create an object called employee whose attributes are emp_id, emp_name and emp_sal.  Write a program to Serialize and deserializethe employee object except for the emp_sal attribute. 
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  Use transient
