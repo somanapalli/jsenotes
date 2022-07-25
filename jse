@@ -3388,9 +3388,590 @@ This is called exception propagation.
 
 
 
+FileHandling in java:
+`````````````````````
+
+we can perform few operations on top of files
+
+  -read
+  -write
+  
+iostreams in java:
+
+stream: 
+
+ flow of data in between primary memory to secondary memory or viceversa.
+ 
+ 
+read() -> secondary memory to primary memory
+
+write() -> primary memory to secondary memory
+
+
+either in the form of bytes or character
+
+
+we have bytestream related classes 
+we hve character stream related classes 
+
+  all these classes are available in java.io package.
+  
+  
+how to create a file in java:
+
+  using File class.
+  
+source code to create the File:
+```````````````````````````````
+package com.citus.files;
+
+import java.io.File;
+import java.io.IOException;
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		
+		File obj = new File("citus");
+		
+		try {
+			obj.createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(obj.exists());
+		
+	}
+
+}
 
 
 
+
+
+we can perform two operations 
+
+write operation 
+
+ -FileWriter
+ -BufferedWriter
+ -PrintWriter
+ 
+ 
+FileWriter example:
+``````````````````
+package com.citus.files;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class Test1  {
+	
+	public static void main(String[] args) throws Exception {
+		
+		File obj = new File("citus");
+		
+		obj.createNewFile();
+		
+		System.out.println(obj.exists());
+		
+		
+		FileWriter fw = new FileWriter("citus");
+		
+		//write the data
+		
+		fw.write("abc\n");
+		fw.write("xyz\n");
+		fw.write(100);
+		
+		fw.close();
+		
+		System.out.println("data writeen succesfully");
+		
+	}
+
+}
+
+example on BufferedWriter:
+``````````````````````````
+package com.citus.files;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.Writer;
+
+public class Test1  {
+	
+	public static void main(String[] args) throws Exception {
+		
+		
+		//create the object of Writer
+		
+		Writer fw = new FileWriter("citus");
+		
+		//create the object of BufferedWriter
+		
+		BufferedWriter bw = new BufferedWriter(fw);
+		
+		bw.write("abc");
+		bw.newLine();
+		bw.write("xyz");
+		bw.newLine();
+		bw.write(100);
+		
+		bw.close();
+		
+		System.out.println("data writeen succesfully");
+		
+	}
+
+}
+
+
+example on PrintWriter
+`````````````````````
+package com.citus.files;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+
+public class Test1  {
+	
+	public static void main(String[] args) throws Exception {
+		
+		//Create the object for PrintWriter
+		
+		PrintWriter pw = new PrintWriter("citus");
+		
+		
+		//write the data
+		
+		pw.println("abc");
+		pw.println("xyz");
+		pw.print(100);
+		
+		pw.close();
+		
+		System.out.println("data writeen succesfully");
+		
+	}
+
+}
+
+
+We can perform read operation .
+
+  FileReader
+  BufferedReader
+  
+  
+example on FileReader:
+```````````````````````
+package com.citus.files;
+
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+
+public class Test1  {
+	
+	public static void main(String[] args) throws Exception {
+		
+		//Create the object for FileReader
+		
+		FileReader fr = new FileReader("citus");
+		
+		int x = fr.read();
+		
+		while(x!=-1) {
+		//type conversion
+		System.out.print((char)x);
+		 x=fr.read();
+		}
+		
+	}
+
+}
+
+
+example on BufferedReader:
+``````````````````````````
+package com.citus.files;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.Writer;
+
+public class Test1  {
+	
+	public static void main(String[] args) throws Exception {
+		
+		//Create the object for BufferedReader
+		
+		BufferedReader br = new BufferedReader(new FileReader("citus"));
+		
+		String s = br.readLine();
+		
+		while(s!=null)
+		{
+			System.out.println(s);
+			s=br.readLine();
+		}
+		
+		
+		
+	}
+
+}
+
+
+assignment:
+```````````
+do the same read and write operations using FileInputStream class and FileOutputStream  class?
+
+
+serialization & deserialization
+````````````````````````````````
+
+network won't understand the java object type data 
+
+ java object => network supported format
+ 
+ 
+it is the process of converting/writing  the object type data into network supported
+format is known as Serialziation.
+
+
+ Collection object(s)
+ 
+  -> serializable object(s).
+  
+  
+   ObjectOuputStream -is used for writing the object data->writeObject()
+   ObjectInputStream - is used for reading the object data.
+   
+   
+Deserialization:
+
+it is the process of reading the object data from network supported file.
+
+   ObjectInputStream 
+
+    ->readObject();   
+   
+   
+Student.java:
+``````````````
+package com.citus.files;
+
+import java.io.Serializable;
+
+public class Student implements Serializable{
+	
+	private int stid;
+	private transient String stname;
+	
+	
+	public int getStid() {
+		return stid;
+	}
+	public void setStid(int stid) {
+		this.stid = stid;
+	}
+	public String getStname() {
+		return stname;
+	}
+	public void setStname(String stname) {
+		this.stname = stname;
+	}
+	
+	
+
+}
+
+Test1.java:
+``````````
+package com.citus.files;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
+import java.io.Writer;
+
+public class Test1  {
+	
+	public static void main(String[] args) throws Exception {
+		
+		ObjectOutputStream oos = 
+				new ObjectOutputStream(new FileOutputStream("citus"));
+		
+		Student st1 = new Student();
+		st1.setStid(100);
+		st1.setStname("supriya");
+		
+		oos.writeObject(st1);
+		
+		oos.close();
+		
+		System.out.println("serialziation process has done");
+		
+	}
+
+}
+
+Test2.java:
+````````````
+package com.citus.files;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+
+//deserialization
+public class Test2 {
+	
+	public static void main(String[] args) throws Exception  {
+		
+		ObjectInputStream ois = 
+				new ObjectInputStream(new FileInputStream("citus"));
+		
+		Student stu= (Student)ois.readObject();
+		
+		System.out.println("student id: " + stu.getStid());
+		System.out.println("student name: " + stu.getStname());
+	}
+
+}
+
+
+
+inner classes(nested classes)
+`````````````````````````````
+
+
+
+class outerclass
+{
+  class innerclass
+  {
+  }
+}
+
+
+-member inner class
+-anonymous inner class
+-local inner class
+-static inner class
+-nested interface(Map.Entry)
+
+
+A non static class that is created inside a class but outside a method 
+is called member inner class.
+
+It is also known as regular inner class.
+
+
+
+syntax:
+```````
+
+class outerclass
+{
+  class innerclass
+  {
+  }
+}
+
+example:
+````````
+package com.citus.innerclasses;
+//outer class
+public class Test1 {
+	
+	private int data=10;
+	class Inner
+	{
+		void msg()
+		{
+			System.out.println("data is : " + data);
+			 
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+		Test1 obj = new Test1();
+		
+		Test1.Inner inner  = obj.new Inner();
+		
+		inner.msg();
+		
+		
+		
+	}
+
+}
+
+Anonymous Inner class:
+``````````````````````
+package com.citus.innerclasses;
+
+interface Person {
+	abstract void eat();
+}
+
+//execution logic class
+public class Test2 {
+
+	public static void main(String[] args) {
+		
+		 Person p = new Person()
+		{
+		
+		public void eat() {System.out.println("eating");}	 
+	 };
+	 
+	 p.eat();
+	}
+}
+
+
+local inner class:
+``````````````````
+
+package com.citus.innerclasses;
+
+public class Test3 {
+	
+	private int data=10;
+	
+	void show()
+	{
+		//from jdk 1.8 onwards we can access non-final members also 
+		//till jdk 1.7 we can access only final members of local inner class
+		int value=50;
+		
+		class Local{
+			
+			void msg() {System.out.println(value);
+			System.out.println(data);}
+			
+		}
+			
+		Local obj = new Local();	
+		obj.msg();	
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		Test3 test3 = new Test3();
+		
+		test3.show();
+		
+	}
+		
+		
+
+}
+
+
+static nested class:
+```````````````````
+package com.citus.innerclasses;
+
+public class Test3 {
+	
+	static int data=10;
+	
+	static class Inner
+	{
+		void msg() {System.out.println(data);}
+	}
+	
+	public static void main(String[] args) {
+		
+		
+		Test3.Inner obj = new Test3.Inner();
+		obj.msg();
+	}
+		
+		
+
+}
+
+
+example:
+````````
+package com.citus.innerclasses;
+
+public class Test3 {
+	
+	static int data=10;
+	
+	static class Inner
+	{
+		static void msg() {System.out.println(data);}
+	}
+	
+	public static void main(String[] args) {
+		
+		Test3.Inner.msg();
+		
+	}
+		
+		
+
+}
+
+
+
+nested interface:
+``````````````````
+package com.citus.innerclasses;
+
+
+interface i1
+{
+	void show();
+	interface i2
+	{
+		void msg();
+	}
+}
+public class Test3 implements i1.i2 {
+	
+	public void msg()
+	{
+		System.out.println("message");
+	}
+	
+	
+	public static void main(String[] args) {
+		
+		i1.i2 obj = new Test3();
+		
+		obj.msg();
+	
+		
+	}
+		
+		
+
+}
 
 
 
