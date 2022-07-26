@@ -3973,13 +3973,351 @@ public class Test3 implements i1.i2 {
 
 }
 
+Collection framework:
+``````````````````````
+
+Collection:
+```````````
+
+note:
+ to work with collecton api, make sure we have to import java.util pacakge
+ 
+ 2 types
+ 
+   1dcfw - either in the form of row or column
+   2dcfw -(key,value) pair
+   
+
+interface(s):
+`````````````
+                       Collection
+ List                  Set             Queue
+ 
+                       SortedSet
+ 
 
 
+note:
+`````
+ for Collection interface, they didn't provide any direct implementation class.
+ but Collection interface is acting root interface for all 1dcfw interface(s).
+ since it contains some common methods which will be useful for all Collection(S)
+ in java like adding, removing,clearing,checking,finding the size etc...
 
 
+ 
+List:
+``````
+ List extends Collection
+ 
+ -it contains Collection and List method(s).
+ 
+ for List interface what are the implementation classe(s)?
+ 
+    ArrayList
+	LinkedList
+	 -legacy classe(s)
+	Vector
+	Stack
+    ..
 
 
+when should we go for List?
 
+  -it allows both homogenious and heterogenious element(s)/object(s)
+  -duplicate elements are allowed
+  -insertion order is preserved
+  -null insertion is possible
+  
+
+note:
+Collections support only object type(s) even though if we pass primitive 
+values internally from jdk1.5 version onwards java compiler converts
+primitive to object type and viceversa.
+
+ primitive to object type - autoboxing
+ object type to primitive - autounboxing.
+ 
+ 
+note:
+for each loop we can apply on top of two elements
+  -one is array
+  -collection variable
+  
+  Iterable interface
+  
+
+example:
+`````````
+package com.citus.cfw;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		
+		//create the object of List interface
+		
+		List<Integer> l = new ArrayList();
+		
+		/*
+		 * l.add("rama"); l.add(100); l.add(true); l.add(3.4); l.add(100); l.add(null);
+		 * l.add(null);
+		 */
+		
+		for(int i=1;i<=10;i++) {
+			l.add(i);
+		}
+		
+		
+		
+		System.out.println(l);//[rama, 100, true, 3.4, 100, null, null]
+		
+		System.out.println("size is: " + l.size());//7
+		
+		System.out.println("element at 0th index: " + l.get(0));//rama
+		
+		
+		System.out.println("======using for loop===========");
+		
+		for(int i=0;i<l.size();i++)
+		{
+			System.out.println(l.get(i));
+		}
+		
+		System.out.println("======using foreach loop===========");
+		
+		for(Integer temp:l)
+		{
+			if(temp%2==0) {
+				System.out.println(temp);
+			}
+		}
+
+	}
+}
+
+
+what is the difference between ArrayList and LinkedList?
+``````````````````````````````````````````````````````````
+->dynamic array
+->doubly linkedlist
+
+
+note:
+if our frequent operation is accessing then we will go for ArrayList.
+
+note:
+if our frequent operation is manipulation then we will go for 
+LinkedList
+
+ 
+do the program on top of Vector and stack?
+
+
+Set:
+`````
+->it allows both homogenious and heterogenious elements
+->duplicates are not allowed
+->insertion order is not preserved
+->null insertion is possible only once.
+
+           HashSet
+           LinkedHashSet
+		   
+difference between HashSet and LinkedHashSet:
+
+  HashSet doesn't follow insertion order whereas incase of LinkedHashSet it 
+  follows insertion order is preserved.
+  
+  
+example:
+`````````
+package com.citus.cfw;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
+public class Test2 {
+	
+	public static void main(String[] args) {
+		//generics
+		Set<Student> s = new LinkedHashSet();
+		
+		Student st1 = new Student();
+		st1.setStid(100);
+		st1.setStname("anusha");
+		
+		Student st2 = new Student();
+		st2.setStid(101);
+		st2.setStname("Rishi");
+		
+		s.add(st1);
+		s.add(st2);
+		
+		
+		System.out.println("size is: " + s.size());
+		
+		for(Student st:s)
+		{
+			if(st.getStname().startsWith("a"))
+				System.out.println(st.getStname());
+		}
+	}
+
+}
+
+Student.java:
+`````````````
+package com.citus.cfw;
+
+public class Student {
+	
+	private int stid;
+	private String stname;
+	public int getStid() {
+		return stid;
+	}
+	public void setStid(int stid) {
+		this.stid = stid;
+	}
+	public String getStname() {
+		return stname;
+	}
+	public void setStname(String stname) {
+		this.stname = stname;
+	}
+	public Student(int stid, String stname) {
+		super();
+		this.stid = stid;
+		this.stname = stname;
+	}
+	public Student() {
+		super();
+	}
+	
+	public String toString()
+	{
+		return stid + " " +stname;
+	}
+	
+
+}
+
+
+ note:
+ Set is the sub interface of Collection 
+ 
+  Set doesn't have any specific methods 
+  
+
+SortedSet:
+```````````
+ SortedSet is also an interface extends Set extends Collection extends Iterable
+ 
+
+                  TreeSet
+				  
+
+->it allows only homogenious elements
+->insertion order is sorted(default sorting technique-ascending/alphabetical)
+->null insrtion is not possible even for once
+->TreeSet has some specific methods(headSet(),tailSet(),subSet(),first(),last())
+				  
+example:
+``````````
+package com.citus.cfw;
+
+
+import java.util.TreeSet;
+
+import java.util.Comparator;
+
+class MyComparator implements Comparator<Integer>
+{
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+		
+		return -o1.compareTo(o2);
+	}
+	
+}
+public class Test3 {
+	
+	public static void main(String[] args) {
+		
+		TreeSet<Integer> ts = new TreeSet<Integer>(new MyComparator());
+		
+		
+		ts.add(100);
+		ts.add(34);
+		ts.add(67);
+		ts.add(675);
+		ts.add(-8);
+	
+		  System.out.println(ts.first());//-8 System.out.println(ts.last());//675
+		  System.out.println(ts.headSet(67));//[-8, 34]
+		  System.out.println(ts.tailSet(67));//[67, 100, 675]
+		  System.out.println(ts.subSet(100, 34));//[34, 67]
+		 			
+		System.out.println(ts);
+		
+	}
+
+}
+
+
+adding userdefined object to the TreeSet:
+```````````````````````````````````````````
+package com.citus.cfw;
+
+
+import java.util.TreeSet;
+
+import java.util.Comparator;
+
+class StudentNameComparator implements Comparator<Student>
+{
+
+	@Override
+	public int compare(Student o1, Student o2) {
+		
+		return -o1.getStname().compareTo(o2.getStname());
+	}
+	
+}
+public class Test3 {
+	
+	public static void main(String[] args) {
+		
+		TreeSet<Student> ts = new TreeSet<Student>(new StudentNameComparator());
+		
+		Student s1 = new Student();
+		s1.setStid(100);
+		s1.setStname("rama");
+		
+		Student s2 = new Student();
+		s2.setStid(101);
+		s2.setStname("hyd");
+		
+		ts.add(s1);
+		ts.add(s2);
+		
+		System.out.println(ts);
+		
+	}
+
+}
+
+
+do the one program on top of Queue interface?
+
+ 
+cursors in java:
 
 
 
