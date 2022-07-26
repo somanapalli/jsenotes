@@ -1,0 +1,121 @@
+Collections and Generics
+
+Lab Exercise No:78
+
+Exercise Objective(s):List interface   
+
+Exercise:Create a collection that will contain the names of the days in a week. Print the collection. 
+                  Display the length of the collection and convert the collection into an array and print it.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+
+Lab Exercise No:79
+
+Exercise Objective(s):Classes implementing Set interface
+
+Exercise:Write a program that will accept 10 numbers from the user as input and store it in a collection. 
+                   The numbers should not be duplicated. Also get the index position along with the number  
+where it has to be stored.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+
+
+Lab Exercise No:80
+
+Exercise Objective(s):Classes implementing Map interface
+
+Exercise:Write a program to implement a telephone directory. Display the details.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):      Name           Phone no
+                                                                    ABC                1234
+                                                                    DEF                5678
+Lab Exercise No:81
+
+Exercise Objective(s):Classes implementing Map interface
+
+Exercise:Create a program to depict the usage of the dictionary where words along with the meanings 
+are stored. When the user gives a word, its meaning should be displayed.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:  82
+
+Exercise Objective(s):List interface  
+
+Exercise:Create a program to demonstrate the stack methods push () and pop ()by using a real time 
+example.
+
+Recommended duration:    20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+
+
+Lab Exercise No:83
+
+Exercise Objective(s):Collections and arrays classes
+
+Exercise:Create a class called CD whose attributes are Title and singer.  Arrange the CDs in ascending 
+order based on the singer name. 
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+Lab Exercise No:84
+
+Exercise Objective(s):Understanding  generics
+
+Exercise:Design a class that acts as a library for the following kinds of media: book, video, and 
+newspaper. Provide one version of the class that uses generics and one that does not.
+	    The class should be with add and retrieve methods in order to add and retrieve values 
+from the library.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+
+
+Lab Exercise No:85
+
+Exercise Objective(s):Collections and arrays classes
+
+Exercise:Create a class called BookStore with fields Bookid and Bookname.  Sort using comparator and 
+display the output by sorting based on book name.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
