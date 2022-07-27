@@ -4319,7 +4319,1132 @@ do the one program on top of Queue interface?
  
 cursors in java:
 
+ to iterate the collection data one by one 
+ 
+ 
 
+  -Enumeration -> on legacy classe(s)
+  -Iterator
+  -ListIterator
+  
+  
+
+Iterator:
+```````````
+it is an interface available in java.util package 
+
+iterator()
+
+ Iterator itr = <anycollectionclassobject>.iterator();
+ sysout(itr.getClass().getName());
+ 
+Iterator example:
+`````````````````
+package com.citus.cfw;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		
+		//create the object of List interface
+		
+		List<Integer> l = new LinkedList();
+		
+		
+		
+		for(int i=1;i<=10;i++) {
+			l.add(i);
+		}
+		
+	 Iterator<Integer> itr = l.iterator();
+	 
+	 while(itr.hasNext())
+	 {
+		 int x = itr.next();
+		 if(x%2==0)
+		 {
+			 System.out.println(x);
+		 }
+		 else
+		 {
+			 itr.remove();
+		 }
+	 }
+	
+	 
+	 System.out.println(l);//[2,4,6,8]
+	}
+	
+
+}
+
+
+note:
+Iterator is the universal cursor 
+-it can be applicable on top of any collection class.
+-it is unidirectional cursor
+-using this we can remove the object based on the condition
+
+ListIterator:
+`````````````
+note:
+this interface we can apply on top of only List realted implementation classes.
+
+-it is bidirectional cursor.
+
+  inboth forward direction and backward direction 
+  add the elements
+  update the elements
+  remove the elements
+  
+
+example:
+`````````
+package com.citus.cfw;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.ListIterator;
+
+public class Test1 {
+	
+	public static void main(String[] args) {
+		
+		//create the object of List interface
+		
+		List<Integer> l = new LinkedList();
+		
+		for(int i=1;i<=10;i++) {
+			l.add(i);
+		}
+		
+		//create the object of ListIterator
+		
+		ListIterator<Integer> ltr = l.listIterator();
+	 
+	     System.out.println("displaying the elements in forward direction ");
+	     
+	     
+	     while(ltr.hasNext())
+	     {
+	    	 System.out.println(ltr.next());
+	    	 
+	     }
+	     
+	     System.out.println("displaying the elements in backward direction");
+	     
+	     while(ltr.hasPrevious())
+	     {
+	    	 System.out.println(ltr.previous());
+	     }
+	     
+	     
+	}
+     
+
+}
+
+2dcfw:
+`````
+to organize the data in the form of (key,value) pair.
+
+key ->object ->unique 
+value-> object->value can be duplicated
+
+  java.util.Map
+  
+   HashMap
+   LinkedHashMap
+   
+  java.util.SortedMap
+
+
+HashMap allows both homogenious and heterogenious data.
+insertion order is not preserved
+null insertion is possible
+duplicates are allowed for value objects but not allowed for keys
+
+
+HashMap:
+````````
+package com.citus.cfw;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Test4 {
+	
+	public static void main(String[] args) {
+		
+		
+		Map m = new HashMap();
+		m.put(100, "sourabh");
+		m.put(101,"amith");
+		m.put(102, "trupti");
+		m.put("anusha", 200);
+		m.put(100, "raj");
+		m.put(null, null);
+		m.put(null, "rama");
+		m.put(300,null);
+		
+		
+		
+		
+		System.out.println(m);
+		
+		System.out.println("size is : " + m.size());//6
+		
+		System.out.println(m.remove(300));//null
+		System.out.println("size is : " + m.size());//5
+		System.out.println(m.remove(150));//null
+		
+		System.out.println(m.get(102));//trupti
+		
+		System.out.println(m.get(202));//null
+		
+		System.out.println(m.keySet());//[]
+		System.out.println(m.values());//[]
+		
+		
+		
+		
+	}
+
+}
+
+
+example:
+````````
+package com.citus.cfw;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Test4 {
+
+	public static void main(String[] args) {
+
+		Map<Integer, String> m = new HashMap();
+		m.put(230, "rama");
+		m.put(100, "sourabh");
+		m.put(101, "amith");
+		m.put(102, "trupti");
+
+		for (Map.Entry<Integer, String> m1 : m.entrySet()) {
+			System.out.println(m1.getKey() + " " + m1.getValue());
+		}
+
+	}
+
+}
+
+TreeMap:
+````````
+TreeMap allows only homogenious elements
+null insertion is not possible
+insertion order is preserved(default natural sorting order: 
+ascending/alphabetical)
+duplicates are not allowed
+
+inside TreeMap, we can find few new methods like TreeSet methods
+ 
+   -firstKey(),lastKey(),headMap(),subMap(),tailMap()...
+   
+example:
+````````
+package com.citus.cfw;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+class MyComparator implements Comparator<Integer>
+{
+
+	@Override
+	public int compare(Integer o1, Integer o2) {
+		return -o1.compareTo(o2);
+	}
+	
+	
+}
+public class Test4 {
+
+	public static void main(String[] args) {
+
+		SortedMap<Integer, String> m = new TreeMap(new MyComparator());
+		m.put(230, "rama");
+		m.put(100, "sourabh");
+		m.put(101, "amith");
+		m.put(102, "trupti");
+		m.put(75, "sruthi");
+		m.put(66, "charviha");
+		System.out.println(m);//{66=charviha, 75=sruthi, 100=sourabh, 101=amith, 102=trupti, 230=rama}
+
+		
+	}
+
+}
+ 
+ -ConcurrentHashMap
+ 
+    16
+	->segment level locking
+	16 threads update() 
+	read()
+ -synchronized HashMap ->Collections 
+ 
+     read()
+	 write()
+	 update operation 
+	 
+ -hashCode and equals
+ -FailFastIterator and FailSafe
+ 
+ 
+
+
+
+The Java Collection supports two types of iterators; 
+Fail Fast and 
+Fail Safe. 
+
+These iterators are very useful in exception handling. 
+
+The Fail fast iterator aborts the operation as soon it exposes failures and stops the entire operation. 
+
+Comparatively, Fail Safe iterator doesn't abort the operation in case of a failure.
+
+Any changes in the collection, such as adding, removing and updating collection during a thread are iterating collection then Fail fast throw concurrent modification exception. 
+
+The fail-safe collection doesn't throw exception
+
+Why ConcurrentHashMap is fail-safe?
+Iterator of ConcurrentHashMap is fail-safe, it means that it doesn't throw ConcurrentModificationException even if underlying ConcurrentHashMap is modified once Iteration begins.
+ 
+ 
+HashMap, HashTable and ConcurrentHashMap are three most important data structures of Java Collection Framework. 
+
+All three hold the data in the form of key-value pairs. HashTable and ConcurrentHashMap are internally synchronized and hence thread safe.
+
+HashMap is not synchronized, but you can make it synchronized externally using Collections.synchronizedMap(). 
+
+
+
+Differences Between Synchronized HashMap, HashTable And ConcurrentHashMap In Java :
+
+
+1) Locking Mechanism
+
+Synchronized HashMap and HashTable maintain object level lock. i.e the whole map is locked. Only one thread can enter into the map at any moment of time and others have to wait for the lock.
+
+but in ConcurrentHashMap, the whole map is not locked. The map is divided into number of segments and each segment maintains its own lock. Any thread wants to enter into a segment have to acquire that segment’s lock.
+
+This number of segments is decided by the parameter called Concurrency_Level which is passed while instantiating ConcurrentHashMap. By default, it’s value is 16. That means, the map is divided into 16 segments and 16 threads can enter into the map at at time.
+
+
+
+2) Which operations are synchronized?
+
+In synchronized HashMap and HashTable, all operations are synchronized. That means, whatever the operation you want to perform on the map, whether it is read or update, you have to acquire object lock.
+
+But in ConcurrentHashMap, only update operations are synchronized. Read operations are not synchronized. That means, any number of threads which wants to perform read operations on the map can enter into the map without waiting for the lock. Only update operations need segment level lock. Read operations don’t need any type of lock.
+
+
+3) How many threads can enter into a map at a time?
+
+Whatever may be the operation, only one thread can enter into a synchronized HashMap and Hashtable at any moment of time. Other threads have to wait for the lock.
+
+On the other hand, minimum 16 threads can perform update operations on ConcurrentHashMap at a time and any number of threads can perform read operations at a time without waiting for the lock.
+
+4) Null Keys And Null Values
+
+Synchronized HashMap allows one null key and any number of null values.
+
+HashTable and ConcurrentHashMap doesn’t allow even a single null key and null values.
+
+5) Nature Of Iterators
+
+Iterators returned by synchronized HashMap are fail-fast in nature. i.e they throw ConcurrentModificationException if the map is modified after the creation of iterator.
+
+Iterators returned by HashTable and ConcurrentHashMap are fail-safe in nature. i.e they don’t throw ConcurrentModificationException if the map is modified after the creation of iterator.
+
+6) When they are introduced?
+
+HashTable was there since JDK 1.1. From JDK 1.2, it has been made a part of Java Collection Framework.
+
+HashMap is introduced in JDK 1.2 and ConcurrentHashMap in JDK 1.5.
+
+7) When to use what?
+
+HashTable is the legacy class. It is sometime considered as due for deprecation. So, it is recommended that not to use HashTable in your applications.
+
+If you want high level of data consistency, then only consider using synchronized HashMap. 
+
+Otherwise, in all the concurrently executing multi threaded circumstances, ConcurrentHashMap is the best choice
+
+
+
+
+
+
+ClientTest.java:
+````````````````
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+
+import com.infotech.model.Department;
+import com.infotech.model.Employee;
+
+public class ClientTest {
+
+	public static void main(String[] args) {
+		
+		Employee e1 = new Employee(1009, "Sam", 90000.00, "sam@infotech.com");
+		Employee e2 = new Employee(2009, "Ambay", 30000.00, "martin@infotech.com");
+		Employee e3 = new Employee(3009, "Joya", 50000.00, "joya@infotech.com");
+		Employee e4 = new Employee(4009, "Boya", 70000.00, "harry@infotech.com");
+		Employee e5 = new Employee(5009, "Sean", 80000.00, "sean@infotech.com");
+		
+		Employee e6 = new Employee(5010, "Abrahim", 930000.00, "abrahim@infotech.com");
+		
+		
+		Department d1 = new Department(10001, "IT", "Boston");
+		Department d2 = new Department(10002, "Finance", "Chennai");
+		
+	   // Map<Employee,Department> empDeptMap = new HashMap<>();
+		Map<Employee,Department> empDeptMap = new ConcurrentHashMap<>();
+		
+		empDeptMap.put(e1, d1);
+		empDeptMap.put(e2, d1);
+		empDeptMap.put(e3, d1);
+		
+		empDeptMap.put(e4, d2);
+		empDeptMap.put(e5, d2);
+		
+		//empDeptMap.put(null, d1);
+		//empDeptMap.put(e6, null);
+		
+		Set<Entry<Employee, Department>> entrySet = empDeptMap.entrySet();
+		Iterator<Entry<Employee, Department>> iterator = entrySet.iterator();
+		
+		while (iterator.hasNext()) {
+			Map.Entry<Employee, Department> entry = (Map.Entry<Employee,Department>) iterator.next();
+			Employee employee = entry.getKey();
+			Department department = entry.getValue();
+			System.out.println(employee);
+			System.out.println(department);
+			empDeptMap.put(e6, d2);
+		}
+	}
+}
+
+Department.java
+````````````````
+public class Department {
+
+	private Integer deptId;
+	private String deptName;
+	private String deptLocation;
+	
+	public Department(Integer deptId, String deptName, String deptLocation) {
+		super();
+		this.deptId = deptId;
+		this.deptName = deptName;
+		this.deptLocation = deptLocation;
+	}
+	@Override
+	public String toString() {
+		return "Department [deptId=" + deptId + ", deptName=" + deptName + ", deptLocation=" + deptLocation + "]";
+	}
+}
+Employee.java:
+```````````````
+public class Employee{
+
+	private Integer employeeId;
+	private String employeeName;
+	private Double salary;
+	private String email;
+	
+	public Employee(Integer employeeId, String employeeName, Double salary, String email) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.salary = salary;
+		this.email = email;
+	}
+	
+
+	public Integer getEmployeeId() {
+		return employeeId;
+	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	public Double getSalary() {
+		return salary;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((email == null) ? 0 : email.hashCode());
+		result = prime * result + ((employeeId == null) ? 0 : employeeId.hashCode());
+		result = prime * result + ((employeeName == null) ? 0 : employeeName.hashCode());
+		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (employeeId == null) {
+			if (other.employeeId != null)
+				return false;
+		} else if (!employeeId.equals(other.employeeId))
+			return false;
+		if (employeeName == null) {
+			if (other.employeeName != null)
+				return false;
+		} else if (!employeeName.equals(other.employeeName))
+			return false;
+		if (salary == null) {
+			if (other.salary != null)
+				return false;
+		} else if (!salary.equals(other.salary))
+			return false;
+		return true;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", salary=" + salary
+				+ ", email=" + email + "]";
+	}
+}
+
+
+
+
+     the default implementation is not enough to satisfy business needs.
+	 
+	 
+	 note:
+	 if two objects are equal according to the equals() of Object class,
+	 then calling the hashCode() on each of the two objects must produce
+	 the same integer result.
+	 
+
+Student.java:
+````````````
+package com.citus.cfw;
+
+public class Student {
+	
+	private int stid;
+	private String stname;
+	public int getStid() {
+		return stid;
+	}
+	public void setStid(int stid) {
+		this.stid = stid;
+	}
+	public String getStname() {
+		return stname;
+	}
+	public void setStname(String stname) {
+		this.stname = stname;
+	}
+	public Student(int stid, String stname) {
+		super();
+		this.stid = stid;
+		this.stname = stname;
+	}
+	public Student() {
+		super();
+	}
+	
+	public String toString()
+	{
+		return stid + " " +stname;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + stid;
+		result = prime * result + ((stname == null) ? 0 : stname.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Student other = (Student) obj;
+		if (stid != other.stid)
+			return false;
+		if (stname == null) {
+			if (other.stname != null)
+				return false;
+		} else if (!stname.equals(other.stname))
+			return false;
+		return true;
+	}
+
+	
+	
+	
+
+}
+
+
+Test.java:
+```````````
+package com.citus.cfw;
+
+import java.util.HashSet;
+
+public class Test {
+	
+	public static void main(String[] args) {
+		
+		Student s1 = new Student(100,"ram");
+		Student s2 = new Student(100,"ram");
+	
+		/*
+		 * System.out.println(s1.equals(s2));//true
+		 * 
+		 * System.out.println(s1.hashCode()); System.out.println(s2.hashCode());
+		 */
+		
+		  HashSet<Student> hs = new HashSet<Student>();
+		  
+		  hs.add(s1); 
+		  hs.add(s2);
+		  
+		  System.out.println(hs.size());
+		  System.out.println(hs);
+		 
+		
+	}
+
+}
+
+	 
+
+
+
+
+
+jdbc
+``````
+  jdbc stands for java database connectivity.
+  orm
+  spring jdbc module(JdbcTemplate)
+  spring orm module(HibernateTemplate)
+  spring data jpa
+  
+  purpose: to store the data in database.
+  
+steps to follow to perfrom any db operations:
+
+ type1
+ ..
+ type4(java)-platform independent driver
+ these driver classe(s) are different from one db to another db.
+ 
+ ->com.mysql.jdbc.Driver
+ ->oracle.jdbc.driver.OracleDriver
+ 
+ 
+ 
+note:
+to work with jdbc , make sure we have to import java.sql package
+
+ 1.load the driver class
+ 
+    Class.forName("oracle.jdbc.driver.OracleDriver)
+	
+	
+ 2.obtain the connection
+ 
+    Connection con =DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+	
+	jdbc ->main protocol
+	
+	oracle -> sub protocol
+	thin ->nick name of type4 driver
+	localhost: current ip address
+	1521: default port number of oracle database
+	xe: default database name of oracle express edition
+	
+	
+	oracle:
+	  express edition->xe
+	  enterprise edition->orcl
+	  
+	  
+	
+	
+	
+ 3.create the object for Statement/PreparedStatement/CallableStatement
+ 
+         Statement st= con.createStatement();
+ 
+ 4.execute/process the queries
+ 
+        queries are of how many types
+		
+		non-select queries(executeUpdate())
+		select quries
+		
+		
+		int x =st.executeUpdate("insert into student values(100,"ram"));
+		
+		
+ 5.close the connection 
+ 
+        con.close();
+		
+ 
+ 
+ db:
+  
+   ->insert,update,delete,select
+   
+ 
+
+sunmicrosystem -> jdbc as an api/specification
+
+who are providing the implementations for this jdbc api?
+
+ different different database vendors in the form of jar files
+ 
+  ->Connector.jar
+  ->
+  C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib
+  ojdbc6.jar
+  
+  type4 oracle driver class name -> OracleDriver
+  
+
+
+example:
+````````
+package com.citus.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Test1 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		//load the driver class
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		System.out.println("driver class loaded");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+		System.out.println("i have got the connection");
+		
+		Statement st = con.createStatement();
+		
+		//process the  non-select  queries
+		
+		int x = st.executeUpdate("insert into student values(102,'anusha')");
+		
+		
+	
+		System.out.println(x + "row(s) inserted");
+		
+		//closing the connection 
+		con.close();
+		
+	}
+
+}
+
+
+how to process select queries:
+````````````````````````````````
+package com.citus.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+public class Test1 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		//load the driver class
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		System.out.println("driver class loaded");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+		System.out.println("i have got the connection");
+		
+		Statement st = con.createStatement();
+		
+		//process the  non-select  queries
+		
+		//int x = st.executeUpdate("insert into student values(102,'anusha')");
+		
+		ResultSet rs = st.executeQuery("select * from student");
+	
+		
+		while(rs.next())
+		{
+			System.out.println(rs.getInt(1) + " " + rs.getString(2));
+		}
+		
+		//closing the connection 
+		con.close();
+		
+	}
+
+}
+
+
+how to process metadata of table:
+
+  how many columns
+  column datatype
+  column size
+  
+by using interface 
+ResultSetMetaData
+
+example:
+````````
+package com.citus.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
+
+public class Test1 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		//load the driver class
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		System.out.println("driver class loaded");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+		System.out.println("i have got the connection");
+		
+		Statement st = con.createStatement();
+		
+		//processing meta information
+		
+		ResultSet rs = st.executeQuery("select * from student");
+		
+		ResultSetMetaData metaData = rs.getMetaData();
+		
+		System.out.println("no.of columns: " + metaData.getColumnCount());
+		
+		for(int i=1;i<=metaData.getColumnCount();i++)
+		{
+			System.out.println(metaData.getColumnName(i) + " " +metaData.getColumnTypeName(i) + " " +metaData.getPrecision(i));
+		}
+		//closing the connection 
+		con.close();
+		
+	
+	}
+
+}
+
+
+
+queries are of two types
+
+ static queries
+ 
+   it is a query which itself has data
+   
+   insert into student values(100,'ram');
+   
+   
+ dynamic queries
+ 
+    wanted to pass the data at runtime
+	
+	
+	to process the static queries -> Statement 
+	
+	to process the dynamic queries -> PreparedStatement
+	
+	
+how to process dynamic queries:
+``````````````````````````````
+package com.citus.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.util.Scanner;
+
+public class Test1 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		//load the driver class
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		System.out.println("driver class loaded");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+		System.out.println("i have got the connection");
+		
+		PreparedStatement ps = con.prepareStatement("insert into student values(?,?)");
+		
+		Scanner s = new Scanner(System.in);
+		
+		System.out.println("enter student id:");
+		
+		int stid = s.nextInt();
+		
+		System.out.println("enter student name:");
+		
+		String stname = s.next();
+		
+		
+		ps.setInt(1, stid);
+		ps.setString(2, stname);
+		
+		int x = ps.executeUpdate();
+		
+		System.out.println(x + "row(s) inserted");
+		
+		//closing the connection 
+		con.close();
+		
+	}
+
+}
+
+
+batch processing:
+````````````````
+	
+  package com.citus.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Test1 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		//load the driver class
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		System.out.println("driver class loaded");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+		System.out.println("i have got the connection");
+		
+		Statement st  = con.createStatement();
+		
+		st.addBatch("insert into student values(104,'amit')");
+		st.addBatch("update student set stname='rk' where stid=100");
+		st.addBatch("delete from student where stid=103");
+		
+		int x[] = st.executeBatch();
+		
+		System.out.println(x[0] + "row(s) inserted");
+		System.out.println(x[1] + "row(s) updated");
+		System.out.println(x[2] + "row(s) deleted");
+		
+		//closing the connection 
+		con.close();
+		
+	}
+
+}
+
+
+transaction management:
+````````````````````````
+
+transaction:
+
+do everything or do nothing
+
+if all sql queries executed succesfully then only commit the transaction 
+otherwise revoke the transaction
+
+
+ money is debited 
+ money is credited
 
  
+ by default from db environment 
+  all dml queries are not autocommited
+ by default from java environment 
+   all dml queries are autocommited statement.
+   
+transaction management:
+`````````````````````````
+
+package com.citus.jdbc;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class Test2 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","citus","citus");
+		
+		con.setAutoCommit(false);
+		
+		
+		Statement st = con.createStatement();
+		
+		st.addBatch("update rama set bal=bal-3000 where acno=100");
+		st.addBatch("update sitha set bal=bal+3000 where acno=101");
+		
+		int x[] = st.executeBatch();
+		
+		if(x[0] ==1 && x[1]==1)
+		{
+			System.out.println("funds transferred successfully");
+			con.commit();
+		}
+		else
+		{
+			System.out.println("funds not transfered successfully");
+			con.rollback();
+		}
+	}
+
+}
+
+
+
+Test1.java:
+```````````
+package com.citus.jdbc;
+
+import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.util.Properties;
+
+public class Test1 {
+	
+	public static void main(String[] args) throws Exception{
+		
+		Properties properties =new Properties();
+		
+		FileReader filereader = new FileReader("E:\\citustech-training-exp\\jseprog\\src\\com\\citus\\jdbc\\dbconfig.properties");
+		properties.load(filereader);
+		
+		String drivername = properties.getProperty("drivername");
+		String url = properties.getProperty("url");
+		String username = properties.getProperty("username");
+		String password = properties.getProperty("password");
+		
+		Class.forName(drivername);
+		Connection con = DriverManager.getConnection(url,username,password);
+		Statement st = con.createStatement();
+		int x = st.executeUpdate("insert into student values(200,'citus')");
+		System.out.println(x+ "row(s) inserted");
+		//closing the connection 
+		con.close();
+		
+	}
+
+}
+
+
+dbconfig.proeprties:
+````````````````````
+drivername=oracle.jdbc.driver.OracleDriver
+url=jdbc:oracle:thin:@localhost:1521:xe
+username=citus
+password=citus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
