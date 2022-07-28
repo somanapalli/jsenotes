@@ -1,0 +1,235 @@
+JDBC
+
+Lab Exercise No: 96
+
+Exercise Objective(s): Working with native drivers to insert, update and delete and search
+
+Exercise: Write a program to create a table called training with the following attributes,
+1.	Sap_ID
+2.	Stud_name
+3.	Stream
+4.	Percentage
+The program should insert all your batch mates’ details and display the same.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA	
+
+
+
+
+Lab Exercise No: 97
+
+Exercise Objective(s): Statement and Result Set
+
+Exercise: Write a program to Read, Update and Delete any record from the Element table. The table Element has following fields (Atomic weight, Name and Chemical symbol). The input should be provided through Command Line Argument along with the appropriate data.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+Lab Exercise No: 98
+
+Exercise Objective(s): Advanced Result Set
+
+Exercise: Display the set of elements from the Element table in Lab Exercise no 120 and the make the records only readable.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+Lab Exercise No: 99
+
+Exercise Objective(s): Working with Prepared Statement
+
+Exercise: From the Lab exercise 16, create a Student table and insert the values using prepared statement and display the table.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+Lab Exercise No: 100
+
+Exercise Objective(s): Working with Prepared Statement
+
+Exercise: From the Lab Exercise 122, add two more student details to the table and display only the RollNo, StudName and MarksInMaths.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+	
+
+
+Lab Exercise No: 101
+
+Exercise Objective(s): Working with PreparedStatement
+
+Exercise: List the trainees from the training table (Lab Exercise no 119).  Display the first, nth and last record in that list.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+Lab Exercise No: 102
+
+Exercise Objective(s): Invoking stored procedure-Callable Statement
+
+Exercise: From Lab Exercise 25, create a table called Employee. Add a column called salary. Create a procedure called updateprocedure which will update the salary of an employee.  Update the salary of an employee by calling the procedure and passing the employee id of a particular employee.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+Lab Exercise No: 103
+
+Exercise Objective(s): Transaction with JDBC
+
+Exercise: Create a table called Account with AccNo, AccName, AccType and Balance. Now consider a transfer of money from AccNo 1 to AccNo2. Display the AccNo and Balance before the transfer and after the transfer. Try both the scenarios of transfer is successful and transfer is failure.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+Lab Exercise No: 104
+
+Exercise Objective(s): JdbcRowSet
+
+Exercise: Using Lab Exercise 119, delete 2 trainees name from the table using JdbcRowSet.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+JDBC
+
+Lab Exercise No: 105
+
+Exercise Objective(s): Working with native drivers to insert, update and delete and search
+
+Exercise: Write a program to create a table called training with the following attributes,
+1.	Sap_ID
+2.	Stud_name
+3.	Stream
+4.	Percentage
+The program should insert all your batch mates’ details and display the same.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA	
+
+
+
+
+Lab Exercise No: 106
+
+Exercise Objective(s): Statement and Result Set
+
+Exercise: Write a program to Read, Update and Delete any record from the Element table. The table Element has following fields (Atomic weight, Name and Chemical symbol). The input should be provided through Command Line Argument along with the appropriate data.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+Lab Exercise No: 107
+
+Exercise Objective(s): Advanced Result Set
+
+Exercise: Display the set of elements from the Element table in Lab Exercise no 120 and the make the records only readable.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+Lab Exercise No: 108
+
+Exercise Objective(s): Working with Prepared Statement
+
+Exercise: From the Lab exercise 16, create a Student table and insert the values using prepared statement and display the table.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+
+
+
+
+
+Lab Exercise No: 109
+
+Exercise Objective(s): Working with Prepared Statement
+
+Exercise: From the Lab Exercise 122, add two more student details to the table and display only the RollNo, StudName and MarksInMaths.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+	
+
+
+
+
+
+Lab Exercise No: 110
+
+Exercise Objective(s): Working with PreparedStatement
+
+Exercise: List the trainees from the training table (Lab Exercise no 119).  Display the first, nth and last record in that list.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+Lab Exercise No: 111
+
+Exercise Objective(s): Invoking stored procedure-Callable Statement
+
+Exercise: From Lab Exercise 25, create a table called Employee. Add a column called salary. Create a procedure called updateprocedure which will update the salary of an employee.  Update the salary of an employee by calling the procedure and passing the employee id of a particular employee.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+
+  JDBC-assignments
+  
+Lab Exercise No: 112
+
+Exercise Objective(s): Transaction with JDBC
+
+Exercise: Create a table called Account with AccNo, AccName, AccType and Balance. Now consider a transfer of money from AccNo 1 to AccNo2. Display the AccNo and Balance before the transfer and after the transfer. Try both the scenarios of transfer is successful and transfer is failure.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
+
+
+
+Lab Exercise No: 113
+
+Exercise Objective(s): JdbcRowSet
+
+Exercise: Using Lab Exercise 119, delete 2 trainees name from the table using JdbcRowSet.
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):  NA
