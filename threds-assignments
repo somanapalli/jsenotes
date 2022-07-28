@@ -1,0 +1,141 @@
+                 Threads - assignments
+				 
+
+Lab Exercise No:59
+
+Exercise Objective(s):Thread creation and running
+
+Exercise: Write a program to display the name of the currently running thread.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:60
+
+Exercise Objective(s):Thread priority
+
+Exercise:Create a class and spawn 3 threads. Make sure that the Thread2 executes always before 
+Thread3 irrespective of Thread1.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+
+Lab Exercise No:61
+
+Exercise Objective(s):Naming threads, Thread life cycle, and Thread priority
+
+Exercise:Create a class with 4 threads and display a table structured output with the following details 
+every 100 secs 5 times.
+1.	The Id of the thread
+2.	The name of the thread
+3.	Whether the thread is alive or not
+4.	The status of the thread
+5.	The priority level of the thread
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+Lab Exercise No:62
+
+Exercise Objective(s):Thread creation and running
+
+Exercise: Create a class and create 2 threads inside
+1.	Non-static inner class
+2.	Local inner class
+3.	Anonymous inner class
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:63
+
+Exercise Objective(s):Thread life cycle
+
+Exercise:Write a program that picks up a question from an array containing 10 elements and displays 
+the question. It then waits 30 seconds for the user to answer. If user answers it correctly, then 
+it moves to the next question,  otherwise it terminates the program.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:64
+
+Exercise Objective(s):Thread life cycle
+
+Exercise:Write a class called Clock with two methods Tick and Tock each displaying tick and tock as 
+messages respectively.The outputshould be as follows:
+Tick1 Tock 1
+Tick2Tock 2
+Tick3Tock 3
+
+	    The output goes on till 60.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable): NA
+
+
+
+Lab Exercise No:65
+
+Exercise Objective(s):Synchronization
+
+Exercise:Write an application to simulate the vehicles crossing a bridge and a toll plaza on a highway.
+ For the purpose of this exercise, simulate the environment for five vehicles that are 
+approaching the bridge and the toll booth. The vehicles are numbered from one to five. The 
+vehicles should approach the bridge and the toll booth in sequential order. The toll booth can 
+only deal with one vehicle at a time. This application should print a message every time when 
+a vehicle crosses the bridge and another message when a vehicle crosses the toll booth along 
+with the vehicle number.
+
+Recommended duration: 20 Mins
+
+Solution Guidance (if applicable):The simulation is performed by having one thread for each vehicle.
+and consists of four classes:
+-Vehicle: Simulate the behavior of a vehicle
+-Bridge:Simulate the behavior of a Bridge
+-TollBooth: Simulate the behavior of a TollBooth
+-Simulate: creates the vehicles and controls the simulation.
+
+
+
+
+
+
+Lab Exercise No:  66
+
+Exercise Objective(s):Thread priority
+
+Exercise:Consider the following scenario. Whenever a hen lays an egg its owner sells the egg to a shop. 
+                   In the last 4 months the owner has gained Rs. 100 by selling eggs in the rate of Rs.2 per egg. 
+                  Display the following messages 
+
+Hen Laid the Egg – 1
+Owner gained Rs 2
+Hen Laid the Egg – 2
+Owner gained Rs 4
+…
+…
+…
+…. So on.
+
+
+Recommended duration:    20 Mins
+
+Solution Guidance (if applicable): This should be done based on the Producer-Consumer logic.
+
