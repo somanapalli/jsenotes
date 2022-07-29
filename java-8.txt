@@ -1,0 +1,595 @@
+java8-course started --> november 4th
+
+Java 8 is one of the major and more prestigious version from Java. In this video tutorials we covered every topic  in detail on the board and on the system with live execution. Definitely you can feel like you are learning in class room directly from the instructor. As the part of this course we are covering     the following 11 topics.
+
+1. Lambda Expressions
+2. Functional Interfaces
+3. Default methods in Interface
+4. Static Methods in Interfaces.
+5. Predicate
+6. Function
+7. Consumer
+8. Supplier
+9. Method Reference & Constructor Reference by Double Colon(::) Operator.
+10. Stream API
+11. Date & Time API ( Joda API)
+
+After completing this video course, we are sure, you will be in a position to give left and right anywhere about these new features.
+
+
+1. Lambda Expressions
+`````````````````````
+1.To enable functional programming in java8-course
+2.To write more reliable , maintable and concise code.
+3.To use API's very easily and effectively we can use lambda expressions.
+4.To enable parallel processing
+
+
+
+
+
+
+
+what is lambda expression:
+``````````````````````````
+A lambda expression is an anonymous function.
+
+anonmynous function:--> nameless function
+
+  -->not having nameless
+  -->not having modifiers
+  -->not having any return type.
+  
+  
+
+
+
+eg:
+```          public void m1(){
+                System.out.println("hello");
+			 }
+			 
+equivalent lambda expression:
+
+                 () -> {
+				 System.out.println("Hello");
+				 }
+
+eg:2
+````
+       public void add(int a, int b)
+	   {
+	     System.out.println(a+b);
+	   }
+	   
+lambda expression:
+  
+           (int a, int b) -> { System.out.println(a+b); }
+		   
+eg:3
+
+          public int getLength(String s)
+		  {
+		     return s.length();
+		  }
+
+lamda expression:
+               (String s) -> { return s.length();}
+			   
+			   
+          
+Note:
+````
+If the body of the lamda expression contains single statement then
+curly braces are optional
+
+If the body of the lamda expression contains multiple statements then curly braces are mandatory.
+		  
+eg:
+  () -> System.out.println("Hello");
+
+eg:
+	( a,  b) ->  System.out.println(a+b); 		 
+				 	  
+Note:
+
+Sometimes based on the context, compiler can guess the argument types (type inference) so in that case optional to specify the data types for those arguments.
+		  
+eg:
+```` 
+    s-> s.length();
+
+note:
+
+if method is expecting single argument specifying paranthesis is also optional and based on the context compiler guess it is returning some value so that writing return keyword also optional
+	
+		  
+Notepoints regarding lambda expression:
+
+1.A lambda expression can take any no.of parameters.
+2.If multiple parameters present then these parameters should be separated with ,
+3.If only one parameter available then paranthesis is optional.
+4.Usually we can specify the type of parameters, if compiler expect
+  the type of based on context,then we can remove type(type inference)
+  
+5.Similar to method body, lambda expression body can contain any number of statements.
+If multiple statements are there then we should enclose within curly braces.
+
+6. If lambda expression return something then we can remove return keyword.
+
+Functional Interface:
+`````````````````````
+-->If the interface contains only one abstract method that interface is called Functional interface.
+
+eg:
+    Runnable-->only run()
+	Callable--> only call() 
+	ActionListener --> only actionPerformed()
+	Comparable --> only compareTo() 
+	
+note:
+`````
+we have to focus only whether that interface has only one abstract method or not
+
+we no need to focus whether it has default method or static method even though we call it as functional interface
+
+note:
+````
+if an interface contains more than one abstract method we can't be treated as
+functional interface 
+
+so rule is it should maintain only one abstract method.
+
+	
+use of functional interface:
+````````````````````````````
+To invoke or to call labmda expression
+	
+@FunctionalInterface:
+
+It is an annotation  to represent an interface as functional interface
+
+eg:
+```
+    @FunctionalInterface
+    interface intf1
+    {
+          public void m1();
+          default void m2(){}
+          public static void m3(){}
+    }		  
+
+
+eg:
+   @FunctionalInterface-->Invalid
+   interface intf2
+   {
+     public void m1();
+	 public void m2();
+   }
+
+CompileTimeError: Unexpected @FunctionalInterface annotation.
+
+
+eg:3:
+
+ @FunctionalInterface
+   interface intf2
+   {
+     
+   }
+
+CompileTimeError: Unexpected @FunctionalInterface annotation.
+
+
+
+Functional Interface w.r.to Inheritance:
+````````````````````````````````````````
+case-1
+```````
+If an interface extends Functional Interface and child interface doesnot contain any abstract method, then child interface is always Functional Interface.
+
+eg:
+              @FunctionalInterface
+			  interface P{
+			  public void m1();
+			  }
+			  @FunctionalInterface
+			  interface C extends P{
+			  }
+
+
+Case-2:
+```````
+In the child interface , we can define exactly same parent interface abstract method 
+
+eg:
+              @FunctionalInterface
+			  interface P{
+			   public void m1();
+			  }
+			  @FunctionalInterface
+			  interface C extends P{
+			   public void m1();
+			  }
+
+Case-3
+```````
+In the child interface we can't define any new abstract methods otherwise we will get CompileTime Error.
+
+eg:
+              @FunctionalInterface
+			  interface P{
+			   public void m1();
+			  }
+			  @FunctionalInterface
+			  interface C extends P{
+			   public void m2();
+			  }
+
+------>The above snippet will give CompileTimeError
+CompileTimeError: Unexpected @FunctionalInterface annotation.
+
+eg:
+              @FunctionalInterface
+			  interface P{
+			   public void m1();
+			  }
+			  interface C extends P{
+			   public void m2();
+			  }
+
+
+eg: Without lambda expression:
+```````````````````````````````
+ interface intf1{
+  public void m1();
+ }
+ class Demo extends intf1{
+ public void m1(){
+ System.out.println("m1() method implementation");
+ }
+ }
+ class Test {
+ public static void main(String[] args){
+ intf1 obj = new Demo();
+ obj.m1();
+ }
+ }
+
+With lambda expression:
+```````````````````````
+interface intf1{
+public void m1();
+}
+class Test{
+public static void main(String[] args)
+{
+   intf1 obj = () ->System.out.println("m1() method implementation");
+   obj.m1();
+}
+}
+
+Note:
+`````
+By using Functional Interface reference we are allowed to call lambda expression implementation.
+
+Q: Why Functional Interface should contains only one abstract method?
+
+A:Functional Interface came for invoking lambda expressions so compulsory lambda expression implementation should map with one method of functional interface.
+That's why Functional Interface should contains only one abstract method.
+
+Q: What is the advantage of @FunctionalInterface?
+
+It indicates that this interface is used for lambda expression purpose
+To provide that information to the compiler we must define interface should be annotated with @FunctionalInterface.
+
+
+Lambda Expressions with Collections:
+```````````````````````````````````
+
+All examples are prepared in eclipse workspace
+
+
+
+Anonymonous inner class vs lambda expression:
+`````````````````````````````````````````````
+Nameless inner class is called as Anonymonous inner class
+
+                 Runnable r = new Runnable();//invalid
+				 
+				 Runnable r = new Runnable(){
+				 
+				         public void run(){
+						 .....
+						 .....
+						 } 
+				 };
+
+-->Here implementation class doesnot have any name called as 
+   inner class.
+   
+   
+example:
+`````````
+ Thread t = new Thread(()->{
+       for(int i=1;i<=10;i++){
+	   System.out.println("child thread");
+	   }
+ });
+
+wherever we have scope to use anonmynous inner class there is a possiblity to replace with the lambda expression.
+
+
+-->not for every time
+
+
+***note:
+````````
+If anonmynous inner class that implements interface which contains 
+only one abstract method in that case only that anonmynous inner class can be replaced with labmda expression in other all cases it is not possible to replace with lambda expression.
+
+
+
+note:   Anonymonousinner class !=lambda expression
+
+
+Note:
+
+w.r.to anonymous inner class 'this' gives you local variable value
+	
+Note:
+
+w.r.to lamda expression 'this' gives you class level instance variable value
+
+Advantages of Lambda Expressions:
+
+1.We can enable functional programming in java8-course
+2.We can reduce length of the code so that readability will be improved.
+3.We can resolve complexity of anonymous inner classes until some extent.
+4.We can handle procedures/functions just like values.
+5.we can pass procedures/functions as arguments.
+6.Easier to use updated API's and Libraries.
+7.Enable Support for parallel processing.
+
+Default Methods and Static Methods Inside Interface:
+`````````````````````````````````````````````````````
+From java 1.8 version onwards we can define concrete methods inside interface too in the form of default methods.
+
+
+Default Methods w.r.to Inheritance:
+```````````````````````````````````
+
+Static Methods inside Interface:
+`````````````````````````````````
+Purpose of defining static methods inside interace is for just to define general utility methods which are required for multiple people.
+
+
+
+note:
+`````
+Interface static methods always we can call by using interface name
+not possible to invoke by using implementation class name or by it's instance.
+
+
+Interface Static methods with overriding:
+``````````````````````````````````````````
+note:
+
+Overriding concept is not applicable for interface static methods.
+
+
+
+
+
+
+
+
+
+note:
+````
+we can define main() method also inside the interface and we can make it run also.
+
+eg:
+```
+interface Test4 {
+	public static void main(String[] args)
+	{
+		
+		System.out.println("Hello world");
+	}
+
+}
+
+
+Predefined Functional Interfaces-Prdicate:
+``````````````````````````````````````````
+1.Predicate
+2.Function
+3.Consumer
+4.Supplier
+              etc....
+			  
+Above pre-defined functional interfaces are defined inside java.util.function package
+
+->Comparable
+->Callable
+->Runnable
+->ActionListener (old functional interfaces)
+
+
+Predicate(I):
+`````````````
+-->Introduced in 1.8v--> functional interface
+-->available inside java.util.function package
+-->It contains only one abstract method --> test()
+-->it is a boolean valued function.
+
+         interface Predicate<T>
+		 {
+		     boolean test(T t)
+		 }
+			  
+			  
+
+Note:
+
+We can use Predicate to refer/call lambda expression since Predicate
+is a functional interface.
+
+eg:
+   Predicate<Integer> p = I -> I>10;
+
+
+
+   Sysout(p.test(100));//true
+   Sysout(p.test(5));//false
+   
+eg: Write a predicate whether given collection is empty or not?
+
+  Predicate<Collection> p = c->c.isEmpty();
+ArrayList al = new ArrayList();
+
+
+  System.out.println( p.test(al));//true
+al.add("Ram");
+ System.out.println( p.test(al));//false   
+   
+
+Predicate Joining:
+`````````````````
+Predicate Functional interface contains following default methods
+  ->negate()
+  ->and()
+  ->or()
+  
+eg:
+```` 
+package com.predicate;
+
+import java.util.function.Predicate;
+
+public class Test4 {
+	
+	public static void main(String[] args)
+	{
+		int x[]= {0,5,10,15,20,25,30};
+
+
+
+		Predicate<Integer> p1 = i->i>10;
+
+		Predicate<Integer> p2 = i->i%2==0;
+
+
+
+		System.out.println("The numbers are greater than 10 are");
+		m1(p1,x);
+
+
+
+		System.out.println("The even numbers are");
+		m1(p2,x);
+
+
+
+		System.out.println("The numbers not greater than 10 are");
+		m1(p1.negate(),x);
+
+
+
+		System.out.println("The numbers greater than 10 and even numbers are");
+		m1(p1.and(p2),x);
+
+
+
+		System.out.println("The numbers greater than 10 or even numbers are");
+		m1(p1.or(p2),x);
+	}
+	
+	public static void m1(Predicate<Integer> p,int[] x)
+	{
+		for(int x1:x)
+		{
+			if(p.test(x1))
+			{
+				System.out.println(x1);
+			}
+		}
+	}
+
+}
+
+Note:
+`````
+From above example what we observed is if we are combining two or more predicates into a single predicate then we can call it as predicate joining.
+
+
+eg: write a predicate which gives you names starts with 'k'
+
+eg: to remove null values and empty string from the given list?
+
+eg: Program for User Authentication by using Predicate?
+
+
+static isEqual(T t):
+````````````````````
+         Predicate<String> p = Predicate.isEqual("Ramakrishna");
+
+
+		 System.out.println(p.test("Ramakrishna"));//true
+		 System.out.println(p.test("sailja"));//false
+		 
+		 
+		 
+Function -functional interface:
+`````````````````````````````
+Function is not a boolean valued function and it can return any value based on our requirement.
+
+syntax:
+           T->Input type, R->Return type
+           interface Function<T,R>{
+		             R apply(T,R);
+		   }
+		   
+
+
+examples prepared in workspace
+
+Function Chaining:
+``````````````````
+we have two functions say like f1 and f2
+->In Function functional interfae we have following two default methods are available those are
+   
+         andThen()
+	   compose()
+	   
+1. f1.andThen(f2) --> f1 will be applied followed by f2
+2. f1.compose(f2) --> f2 will be applied followed by f1.
+
+
+3.Function identity() --> it is static method
+
+
+Consumer:
+`````````
+syntax:
+            interface Consumer<T>
+			{ 
+			   void accept(T t)
+		 	}
+			
+-->Conumes values and perform required operations
+
+-->It contains only one abstract metho i.e accept()
+
+-->return type is void
+                                          			
+			
+			
+			
+			
+			
+			
+
+
